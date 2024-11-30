@@ -1,0 +1,191 @@
+{
+  "main": {
+    "id": "9d34abf22e954228",
+    "type": "split",
+    "children": [
+      {
+        "id": "e9b371328f42af85",
+        "type": "tabs",
+        "dimension": 50,
+        "children": [
+          {
+            "id": "72ee8fc492df432a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Путь.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Путь"
+            }
+          }
+        ]
+      },
+      {
+        "id": "a1cc50681f768adb",
+        "type": "tabs",
+        "dimension": 50,
+        "children": [
+          {
+            "id": "009d64a1627c2699",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d2464bdaa9b110ab",
+    "type": "split",
+    "children": [
+      {
+        "id": "79f6bad8b370ffee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a27494f9ffcd0947",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3efa7346cd5d6964",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5d235b36cd0e978c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "63ba2ac542ba5994",
+    "type": "split",
+    "children": [
+      {
+        "id": "95be0cffcdee9e28",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "85d011701bcfecca",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Путь.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Путь"
+            }
+          },
+          {
+            "id": "6d90d7d0269134b9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Путь.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Путь"
+            }
+          },
+          {
+            "id": "191293dfdc26b6f5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3778c000a8e5b219",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Путь.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Путь"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "72ee8fc492df432a",
+  "lastOpenFiles": [
+    "Персонажи/Мастер.md",
+    "Путь.md",
+    "Персонажи",
+    "Начало.md",
+    "create a link.md"
+  ]
+}
