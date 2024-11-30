@@ -6,7 +6,7 @@
       {
         "id": "e9b371328f42af85",
         "type": "tabs",
-        "dimension": 50,
+        "dimension": 49.06166219839142,
         "children": [
           {
             "id": "72ee8fc492df432a",
@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Путь.md",
+                "file": "Начало.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Путь"
+              "title": "Начало"
             }
           }
         ]
@@ -27,7 +27,7 @@
       {
         "id": "a1cc50681f768adb",
         "type": "tabs",
-        "dimension": 50,
+        "dimension": 50.93833780160858,
         "children": [
           {
             "id": "009d64a1627c2699",
@@ -111,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Путь.md",
+                "file": "Начало.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +121,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Путь"
+              "title": "Backlinks for Начало"
             }
           },
           {
@@ -130,12 +130,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Путь.md",
+                "file": "Начало.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Путь"
+              "title": "Outgoing links from Начало"
             }
           },
           {
@@ -157,10 +157,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Путь.md"
+                "file": "Начало.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Путь"
+              "title": "Outline of Начало"
             }
           }
         ]
@@ -182,10 +182,16 @@
   },
   "active": "72ee8fc492df432a",
   "lastOpenFiles": [
-    "Персонажи/Мастер.md",
-    "Путь.md",
-    "Персонажи",
+    "Акт I.md",
+    "Акт II.md",
+    "Акт III.md",
     "Начало.md",
+    "Путь.md",
+    "Сердце тьмы.md",
+    "Pasted image 20241130201105.png",
+    "Персонажи/Мастер.md",
+    "Pasted image 20241130201115.png",
+    "Персонажи",
     "create a link.md"
   ]
 }
