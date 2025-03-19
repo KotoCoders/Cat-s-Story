@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca7svvhcpkbt8"]
+
+[ext_resource type="PackedScene" uid="uid://dd8ch3dsedabv" path="res://scence/tilemaps/tilemap.tscn" id="1_brym3"]
+[ext_resource type="PackedScene" uid="uid://b5muqlbkudgng" path="res://scence/player/player.tscn" id="2_fh1f2"]
+[ext_resource type="PackedScene" uid="uid://b4j8gk762apef" path="res://scence/mobs/enemy.tscn" id="3_d75ip"]
+
+[node name="level" type="Node2D"]
+
+[node name="Tilemap" parent="." instance=ExtResource("1_brym3")]
+position = Vector2(-2, 1)
+scale = Vector2(5, 5)
+
+[node name="player" parent="." instance=ExtResource("2_fh1f2")]
+position = Vector2(-3.00002, 0.999992)
+scale = Vector2(2.11, 2.11)
+
+[node name="enemy" parent="." instance=ExtResource("3_d75ip")]
+position = Vector2(718, -38)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dutk75tl3qbk"]
+
+[ext_resource type="Texture2D" uid="uid://qdfuo3y5qcvk" path="res://assets/player/gun.png" id="1_mw27s"]
+
+[node name="Gun" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(102, 24)
+scale = Vector2(6, 6)
+texture = ExtResource("1_mw27s")
