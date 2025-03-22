@@ -249,6 +249,7 @@ animations = [{
 }]
 
 [node name="player" type="Node2D"]
+scale = Vector2(2, 2)
 
 [node name="player" type="CharacterBody2D" parent="."]
 collision_layer = 2
@@ -267,6 +268,7 @@ frame = 3
 frame_progress = 0.905729
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.805, 0.805)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

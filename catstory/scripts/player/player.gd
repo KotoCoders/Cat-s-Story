@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 
 
-var speed = 400
+var speed = 300
 var bullet_speed = 1200
 var bullet_scene = preload("res://scence/player/attack/bullet.tscn")
 
@@ -21,9 +21,9 @@ func _physics_process(_delta):
 	match state:
 		MOVE:
 			MOVE_STATE()
-			
 	
 func MOVE_STATE():
+	
 	
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
@@ -48,7 +48,7 @@ func MOVE_STATE():
 	move_and_slide()
 	
 func attack():
-	speed = speed/4
+	speed = speed*0.25
 	$Claws.visible = true
 	$Claws/AnimatedSprite2D.play("attactk")
 	await $Claws/AnimatedSprite2D.animation_finished

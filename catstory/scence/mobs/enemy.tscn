@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4j8gk762apef"]
+[gd_scene load_steps=19 format=3 uid="uid://b4j8gk762apef"]
 
 [ext_resource type="Texture2D" uid="uid://b70v851ixdqbl" path="res://assets/player/block.png" id="1_imtef"]
-[ext_resource type="Script" uid="uid://db6y7o4umoqsd" path="res://scripts/enemy/enemy.gd" id="1_rnrlh"]
+[ext_resource type="Script" uid="uid://cr2he4odxuxk0" path="res://scripts/enemy/enemy.gd" id="1_rnrlh"]
+[ext_resource type="Texture2D" uid="uid://dxdhjeuxjxd54" path="res://aseprite/alarm.png" id="3_m1tnc"]
+[ext_resource type="AudioStream" uid="uid://dah53afnvgnbl" path="res://sound/enemy/alert.mp3" id="4_gyvlh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnrlh"]
 atlas = ExtResource("1_imtef")
@@ -56,37 +58,129 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tybfd"]
 size = Vector2(8, 8)
 
+[sub_resource type="Animation" id="Animation_45msw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CharacterBody2D/Alarm:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterBody2D/Alarm_Audio:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gyvlh"]
+resource_name = "alarm"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CharacterBody2D/Alarm:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.3, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterBody2D/Alarm_Audio:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dyvx4"]
+_data = {
+&"RESET": SubResource("Animation_45msw"),
+&"alarm": SubResource("Animation_gyvlh")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imtef"]
 size = Vector2(80, 80)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rnrlh"]
 radius = 408.176
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gyvlh"]
+radius = 866.305
+
 [node name="enemy" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 2
-freeze = true
-freeze_mode = 1
+collision_mask = 3
 script = ExtResource("1_rnrlh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_q33he")
 frame = 5
 frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_tybfd")
 
-[node name="Area_Take_Damage" type="Area2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_dyvx4")
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Take_Damage"]
+[node name="Alarm" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
+position = Vector2(0, -80)
+scale = Vector2(5, 5)
+texture = ExtResource("3_m1tnc")
+
+[node name="Alarm_Audio" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("4_gyvlh")
+
+[node name="Area_Take_Damage" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area_Take_Damage"]
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_imtef")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D_body_entered" type="Area2D" parent="CharacterBody2D"]
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D_body_entered"]
 shape = SubResource("CircleShape2D_rnrlh")
+
+[node name="Area2D_body_exited" type="Area2D" parent="CharacterBody2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D_body_exited"]
+shape = SubResource("CircleShape2D_gyvlh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.087
+autostart = true
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D_body_entered" to="CharacterBody2D" method="_on_area_2d_body_entered_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D_body_exited" to="CharacterBody2D" method="_on_area_2d_body_exited_body_exited"]
+[connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_timer_timeout"]
