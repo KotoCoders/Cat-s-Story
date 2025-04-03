@@ -8,8 +8,8 @@
 [ext_resource type="Script" uid="uid://dp4cevgxrtop2" path="res://scripts/player/area_damage_application.gd" id="6_5aqop"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7q24i"]
-radius = 17.0
-height = 60.0
+radius = 13.5
+height = 27.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cuvb5"]
 atlas = ExtResource("1_mevgr")
@@ -249,14 +249,15 @@ animations = [{
 }]
 
 [node name="player" type="Node2D"]
-scale = Vector2(2, 2)
 
 [node name="player" type="CharacterBody2D" parent="."]
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_b2n7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(-0.5, 19.5)
 shape = SubResource("CapsuleShape2D_7q24i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
@@ -268,7 +269,7 @@ frame = 3
 frame_progress = 0.905729
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.805, 0.805)
+zoom = Vector2(1.24, 1.24)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -292,11 +293,12 @@ texture = ExtResource("4_8w8va")
 
 [node name="Claws" type="Node2D" parent="player"]
 visible = false
+scale = Vector2(1.21, 1.21)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player/Claws"]
-position = Vector2(36, 2)
+position = Vector2(37.3035, 2)
 rotation = 1.5708
-scale = Vector2(1.4803, 1.3142)
+scale = Vector2(1.4803, 1.27347)
 sprite_frames = SubResource("SpriteFrames_phwi3")
 animation = &"attactk"
 frame = 6

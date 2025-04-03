@@ -10,8 +10,8 @@
 position = Vector2(-2, 1)
 scale = Vector2(5, 5)
 
+[node name="enemy" parent="." instance=ExtResource("3_d75ip")]
+position = Vector2(818, -38)
+
 [node name="player" parent="." instance=ExtResource("2_fh1f2")]
 position = Vector2(-3.00002, 0.999992)
-
-[node name="enemy" parent="." instance=ExtResource("3_d75ip")]
-position = Vector2(718, -38)

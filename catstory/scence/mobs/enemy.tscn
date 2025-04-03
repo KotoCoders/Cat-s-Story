@@ -55,8 +55,8 @@ animations = [{
 "speed": 25.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tybfd"]
-size = Vector2(8, 8)
+[sub_resource type="CircleShape2D" id="CircleShape2D_45msw"]
+radius = 3.0
 
 [sub_resource type="Animation" id="Animation_45msw"]
 length = 0.001
@@ -123,17 +123,26 @@ _data = {
 size = Vector2(80, 80)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rnrlh"]
-radius = 408.176
+radius = 339.532
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gyvlh"]
-radius = 866.305
+radius = 639.038
 
 [node name="enemy" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 2
 collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_rnrlh")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D"]
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="CharacterBody2D/NavigationAgent2D"]
+wait_time = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(10, 10)
@@ -143,7 +152,7 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 scale = Vector2(10, 10)
-shape = SubResource("RectangleShape2D_tybfd")
+shape = SubResource("CircleShape2D_45msw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 libraries = {
@@ -181,6 +190,7 @@ shape = SubResource("CircleShape2D_gyvlh")
 wait_time = 1.087
 autostart = true
 
+[connection signal="timeout" from="CharacterBody2D/NavigationAgent2D/Timer" to="CharacterBody2D" method="navigation_timer_timeout"]
 [connection signal="body_entered" from="CharacterBody2D/Area2D_body_entered" to="CharacterBody2D" method="_on_area_2d_body_entered_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D_body_exited" to="CharacterBody2D" method="_on_area_2d_body_exited_body_exited"]
 [connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_timer_timeout"]

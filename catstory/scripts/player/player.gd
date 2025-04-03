@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 
 
-var speed = 300
+var speed = 500
 var bullet_speed = 1200
 var bullet_scene = preload("res://scence/player/attack/bullet.tscn")
 
