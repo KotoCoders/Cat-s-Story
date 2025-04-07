@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://eufpfiwxqdvj"]
+
+[ext_resource type="Script" uid="uid://bctorvge3bshd" path="res://scripts/enemy/dummy.gd" id="1_2ovgq"]
+[ext_resource type="Texture2D" uid="uid://dcxbkjwyonvld" path="res://aseprite/manecen.png" id="1_xvuu2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ovgq"]
+radius = 7.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2(5, 5)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_2ovgq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2ovgq")
+
+[node name="Manecen" type="Sprite2D" parent="."]
+texture = ExtResource("1_xvuu2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -34.0
+offset_right = 48.0
+offset_bottom = -11.0
+horizontal_alignment = 1

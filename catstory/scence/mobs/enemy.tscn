@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4j8gk762apef"]
+[gd_scene load_steps=18 format=3 uid="uid://b4j8gk762apef"]
 
 [ext_resource type="Texture2D" uid="uid://b70v851ixdqbl" path="res://assets/player/block.png" id="1_imtef"]
 [ext_resource type="Script" uid="uid://cr2he4odxuxk0" path="res://scripts/enemy/enemy.gd" id="1_rnrlh"]
@@ -119,14 +119,11 @@ _data = {
 &"alarm": SubResource("Animation_gyvlh")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_imtef"]
-size = Vector2(80, 80)
+[sub_resource type="CircleShape2D" id="CircleShape2D_gyvlh"]
+radius = 639.038
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rnrlh"]
 radius = 339.532
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gyvlh"]
-radius = 639.038
 
 [node name="enemy" type="Node2D"]
 
@@ -168,29 +165,25 @@ texture = ExtResource("3_m1tnc")
 [node name="Alarm_Audio" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("4_gyvlh")
 
-[node name="Area_Take_Damage" type="Area2D" parent="CharacterBody2D"]
+[node name="Areas" type="Node2D" parent="CharacterBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area_Take_Damage"]
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_imtef")
-
-[node name="Area2D_body_entered" type="Area2D" parent="CharacterBody2D"]
+[node name="Area2D_body_exited" type="Area2D" parent="CharacterBody2D/Areas"]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D_body_entered"]
-shape = SubResource("CircleShape2D_rnrlh")
-
-[node name="Area2D_body_exited" type="Area2D" parent="CharacterBody2D"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Areas/Area2D_body_exited"]
 shape = SubResource("CircleShape2D_gyvlh")
+
+[node name="Area2D_body_entered" type="Area2D" parent="CharacterBody2D/Areas"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Areas/Area2D_body_entered"]
+shape = SubResource("CircleShape2D_rnrlh")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.087
 autostart = true
 
 [connection signal="timeout" from="CharacterBody2D/NavigationAgent2D/Timer" to="CharacterBody2D" method="navigation_timer_timeout"]
-[connection signal="body_entered" from="CharacterBody2D/Area2D_body_entered" to="CharacterBody2D" method="_on_area_2d_body_entered_body_entered"]
-[connection signal="body_exited" from="CharacterBody2D/Area2D_body_exited" to="CharacterBody2D" method="_on_area_2d_body_exited_body_exited"]
-[connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_timer_timeout"]
+[connection signal="body_exited" from="CharacterBody2D/Areas/Area2D_body_exited" to="CharacterBody2D" method="_on_area_2d_body_exited_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Areas/Area2D_body_entered" to="CharacterBody2D" method="_on_area_2d_body_entered_body_entered"]
+[connection signal="timeout" from="Timer" to="CharacterBody2D" method="idle_timer_timeout"]

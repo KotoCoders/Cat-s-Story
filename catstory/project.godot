@@ -22,8 +22,11 @@ buses/default_bus_layout=""
 [display]
 
 window/size/viewport_width=1280
-window/size/viewport_height=720
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
 
 [input]
 
