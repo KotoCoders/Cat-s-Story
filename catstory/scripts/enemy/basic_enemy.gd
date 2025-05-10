@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
+@export var can_move : bool
 @export var hp = 100
 @export var speed_idle = 80
 @export var speed_chase = 150
 @onready var navig_agent = $NavigationAgent2D
 var player
 var dir:Vector2
+var dir_cnockback:Vector2
 
 
 var state = States.IDLE
@@ -14,7 +16,7 @@ var is_chased = false
 enum States {
 	IDLE,
 	CHASE,
-	TAKE_DAMAGE,
+	GET_DAMAGE,
 	DEATH
 	
 }
@@ -25,25 +27,27 @@ func _physics_process(_delta):
 			idle_state()
 		States.CHASE:
 			chase_state()
-		States.TAKE_DAMAGE:
-			take_damage_state()
+		States.GET_DAMAGE:
+			get_damage_state()
 		States.DEATH:
 			death_state()
 
 
 func idle_state():
-	velocity = dir * speed_idle
-	move_and_slide()
+	if can_move:
+		velocity = dir * speed_idle
+		move_and_slide()
 
 func chase_state():
-	if is_chased == false:
-		is_chased = true
-		print("is chased = true")
-	_choose_new_direction()
-	velocity = dir * speed_chase
-	move_and_slide()
+	if can_move:
+		if is_chased == false:
+			is_chased = true
+			print("is chased = true")
+		_choose_new_direction()
+		velocity = dir * speed_chase
+		move_and_slide()
 
-func take_damage_state():
+func get_damage_state():
 	#anim & cnockback
 	$AnimatedSprite2D.modulate = Color.RED
 	await get_tree().create_timer(0.2).timeout
@@ -55,14 +59,29 @@ func death_state():
 	await get_tree().create_timer(3).timeout
 	queue_free()
 
-func signal_take_damage(damage: int, _type):
+func signal_get_damage(damage: int, type, player_pos):
 	#после можно будет сделать с типами урона
 	print("нанесён урон")
-	hp -= damage
+	match(type):
+		"claws":
+			hp -= damage
+		"poof":
+			hp -= damage
+			cnockback(player_pos)
 	if hp <= 0:
 		state = States.DEATH
 	else:
-		state = States.TAKE_DAMAGE
+		state = States.GET_DAMAGE
+
+func cnockback(player_pos):
+	print(self.global_position, "   ", player_pos)
+	dir_cnockback = Vector2(self.global_position - player_pos)
+	dir_cnockback = dir_cnockback.normalized()
+	print("cnockabck ", dir_cnockback)
+	velocity = dir_cnockback * 6500
+	move_and_slide()
+	
+	
 
 func _choose_new_direction():
 	if is_chased == false:

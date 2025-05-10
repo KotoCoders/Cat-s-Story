@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0admhku5lr6p"]
+
+[ext_resource type="Script" uid="uid://dmgonwegxg840" path="res://test/bullet_patern.gd" id="1_ueah2"]
+[ext_resource type="PackedScene" uid="uid://d16qne6o1nydu" path="res://test/bullet.tscn" id="2_cvjyn"]
+[ext_resource type="PackedScene" uid="uid://cniwamr4dfwkm" path="res://test/2_bullet.tscn" id="3_c117y"]
+[ext_resource type="Texture2D" uid="uid://xluuoowx7kok" path="res://icon.svg" id="3_cvjyn"]
+[ext_resource type="PackedScene" uid="uid://cp68rqytfcqw7" path="res://test/4_bullet.tscn" id="4_7vu3p"]
+
+[node name="Bullet_Patern" type="Node2D"]
+script = ExtResource("1_ueah2")
+bullet_scene = ExtResource("2_cvjyn")
+bullet_scene2 = ExtResource("3_c117y")
+bullet_scene4 = ExtResource("4_7vu3p")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Change_patern" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_cvjyn")
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Change_patern" to="." method="rand_attack"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceni0e2o210iq"]
+
+[ext_resource type="Script" uid="uid://cw0gpbt1jqkqm" path="res://scripts/pickable_item/basic_pickable_item.gd" id="1_k0x0u"]
+[ext_resource type="Texture2D" uid="uid://dxdhjeuxjxd54" path="res://aseprite/alarm.png" id="2_cbvhb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0r4om"]
+radius = 42.0
+
+[node name="pickable_item" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_k0x0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0r4om")
+
+[node name="Alarm" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_cbvhb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

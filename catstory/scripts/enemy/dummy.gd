@@ -10,5 +10,9 @@ func _process(_delta: float) -> void:
 		await get_tree().create_timer(3).timeout
 		queue_free()
 
-func signal_take_damage(damage:int, _type):
-	hp-=damage
+
+func signal_get_damage(damage:int, type, player_pos):
+	if type == "claws":
+		hp-= damage
+	if type == "poof":
+		hp -= damage

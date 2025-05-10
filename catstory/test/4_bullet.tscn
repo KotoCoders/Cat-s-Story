@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp68rqytfcqw7"]
+
+[ext_resource type="Script" uid="uid://dr376a4r8xxyi" path="res://test/4_bullet.gd" id="1_77330"]
+[ext_resource type="Script" uid="uid://b27tbqb8roh7t" path="res://test/bullet.gd" id="2_yxi48"]
+[ext_resource type="Texture2D" uid="uid://p3cf8xx61m77" path="res://aseprite/bullet.png" id="3_v6xxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74487"]
+size = Vector2(16, 16)
+
+[node name="4bullet" type="Node2D"]
+rotation = -6.28319
+script = ExtResource("1_77330")
+
+[node name="bullet" type="Area2D" parent="."]
+position = Vector2(50, 0)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_yxi48")
+
+[node name="Sprite2D" type="Sprite2D" parent="bullet"]
+scale = Vector2(8, 8)
+texture = ExtResource("3_v6xxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet"]
+shape = SubResource("RectangleShape2D_74487")
+
+[node name="bullet2" type="Area2D" parent="."]
+position = Vector2(-50, 0)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_yxi48")
+
+[node name="Sprite2D" type="Sprite2D" parent="bullet2"]
+scale = Vector2(8, 8)
+texture = ExtResource("3_v6xxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet2"]
+shape = SubResource("RectangleShape2D_74487")
+
+[node name="bullet3" type="Area2D" parent="."]
+position = Vector2(0, 50)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_yxi48")
+
+[node name="Sprite2D" type="Sprite2D" parent="bullet3"]
+scale = Vector2(8, 8)
+texture = ExtResource("3_v6xxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet3"]
+shape = SubResource("RectangleShape2D_74487")
+
+[node name="bullet4" type="Area2D" parent="."]
+position = Vector2(0, -50)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_yxi48")
+
+[node name="Sprite2D" type="Sprite2D" parent="bullet4"]
+scale = Vector2(8, 8)
+texture = ExtResource("3_v6xxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet4"]
+shape = SubResource("RectangleShape2D_74487")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[connection signal="body_entered" from="bullet" to="bullet" method="_on_Bullet_body_entered"]
+[connection signal="body_entered" from="bullet2" to="bullet2" method="_on_Bullet_body_entered"]
+[connection signal="body_entered" from="bullet3" to="bullet3" method="_on_Bullet_body_entered"]
+[connection signal="body_entered" from="bullet4" to="bullet4" method="_on_Bullet_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
