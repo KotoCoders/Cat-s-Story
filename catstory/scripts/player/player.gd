@@ -147,7 +147,6 @@ func _on_poof_timer_timeout():
 func _on_dash_cooldawn_timeout() -> void:
 	can_dash = true
 
-
 func _on_poof_timer_duration_timeout() -> void:
 	
 	print("_on_poof_timer_duration_timeout")

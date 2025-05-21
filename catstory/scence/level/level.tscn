@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca7svvhcpkbt8"]
+[gd_scene load_steps=10 format=3 uid="uid://ca7svvhcpkbt8"]
 
 [ext_resource type="PackedScene" uid="uid://dd8ch3dsedabv" path="res://scence/tilemaps/tilemap.tscn" id="1_brym3"]
 [ext_resource type="PackedScene" uid="uid://b5muqlbkudgng" path="res://scence/player/player.tscn" id="2_fh1f2"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b0admhku5lr6p" path="res://test/bullet_patern.tscn" id="7_8nuhu"]
 [ext_resource type="PackedScene" uid="uid://bp4moqtwordvg" path="res://scence/mobs/pikeman.tscn" id="7_je1cc"]
 [ext_resource type="PackedScene" uid="uid://cp68rqytfcqw7" path="res://test/4_bullet.tscn" id="7_ylwex"]
+[ext_resource type="PackedScene" uid="uid://duqbiprgs6g6a" path="res://scence/mobs/big_slime.tscn" id="8_ylwex"]
+[ext_resource type="PackedScene" uid="uid://byoc4amfv5uhl" path="res://scence/mobs/plant.tscn" id="9_je1cc"]
 
 [node name="level" type="Node2D"]
 
@@ -15,32 +17,46 @@ position = Vector2(-1.19209e-07, 5.96046e-08)
 scale = Vector2(5, 5)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_d75ip")]
-position = Vector2(-37, -344)
+position = Vector2(-1494, -441)
 
 [node name="dummy" parent="." instance=ExtResource("3_d75ip")]
-position = Vector2(-221, -258)
+position = Vector2(-1771, -327)
 
 [node name="player" parent="." instance=ExtResource("2_fh1f2")]
-position = Vector2(-3142, 111)
+position = Vector2(73, -377)
 
 [node name="pickable_item" parent="." instance=ExtResource("5_63gtg")]
-position = Vector2(120, -488)
+position = Vector2(1439, -505)
 
 [node name="pickable_item2" parent="." instance=ExtResource("5_63gtg")]
-position = Vector2(341, -572)
+position = Vector2(1446, -341)
 
 [node name="pickable_item3" parent="." instance=ExtResource("5_63gtg")]
-position = Vector2(-11, -649)
+position = Vector2(1394, -235)
 
 [node name="Bullet_Patern" parent="." instance=ExtResource("7_8nuhu")]
 position = Vector2(-5584, -281)
 
 [node name="Bullet_Patern2" parent="." instance=ExtResource("7_8nuhu")]
-position = Vector2(-4831, -274)
+position = Vector2(-4677, -69)
 
 [node name="4bullet" parent="." instance=ExtResource("7_ylwex")]
-position = Vector2(-3687, -266)
+position = Vector2(-3572, -487)
 
 [node name="pikeman" parent="." instance=ExtResource("7_je1cc")]
-position = Vector2(-327, 276)
-can_move = false
+position = Vector2(721, 1211)
+
+[node name="pikeman2" parent="." instance=ExtResource("7_je1cc")]
+position = Vector2(-503, -198)
+
+[node name="pikeman3" parent="." instance=ExtResource("7_je1cc")]
+position = Vector2(-2117, 1338)
+
+[node name="big_slime" parent="." instance=ExtResource("8_ylwex")]
+position = Vector2(-3132, 879)
+
+[node name="plant" parent="." instance=ExtResource("9_je1cc")]
+position = Vector2(-5149, 401)
+
+[node name="big_slime2" parent="." instance=ExtResource("8_ylwex")]
+position = Vector2(316, -36)

@@ -1,10 +1,12 @@
 extends Node2D
 
-@export var bullet_scene: PackedScene   # Сцена пули, которую будем спавнить
+@export var bullet_scene: PackedScene 
 @export var bullet_scene2: PackedScene
 @export var bullet_scene4: PackedScene
 @export var bullet_speed = 300         # Скорость пуль
 @export var spawn_rate = 0.2    # Как часто спавнить (раз в 0.2 сек)
+
+var direction = Vector2.DOWN
 
 var patern
 
@@ -14,7 +16,7 @@ func _ready():
 
 
 func bullet_setting(bullet, speed, position):
-	bullet.speed = bullet_speed
+	bullet.speed = speed
 	bullet.position = position  # Или используй global_position если нужно
 	get_parent().add_child(bullet)  # Добавляем на сцену
 
@@ -22,8 +24,9 @@ func rand_attack():
 	patern = randi_range(1,4)
 
 func _on_Timer_timeout():
-	rotation_4bullets()
-
+	
+	pass
+	#shoot_straight_delayed(3)
 	#match patern:
 		#1:
 			#shotgun()
@@ -39,12 +42,6 @@ func _on_Timer_timeout():
 			#rotation_4bullets()
 
 
-	#shotgun()
-	#circle_12()
-	#beep()
-	#delayed_ring()
-	pass
-
 func shotgun():
 	var time = Time.get_ticks_msec() / 1000.0  # Time вместо OS в Godot 4льный вызов через OS
 	for i in range(4):
@@ -54,7 +51,6 @@ func shotgun():
 
 		bullet_setting(bullet, bullet_speed, position)
 
-		
 func circle_12():
 	for i in range(12):  # 12 пуль в круге
 		var bullet = bullet_scene.instantiate()  # Создаём пулю
@@ -62,7 +58,7 @@ func circle_12():
 		bullet.direction = Vector2(cos(angle), sin(angle))  # Направление (x=cos, y=sin)
 		
 		bullet_setting(bullet, bullet_speed, position)
-		
+
 func beep():
 	for i in range(5):
 		var bullet = bullet_scene.instantiate()
@@ -72,7 +68,6 @@ func beep():
 		bullet_setting(bullet, bullet_speed, position)
 
 func delayed_ring():
-	
 	for i in range(36):
 		var bullet = bullet_scene.instantiate()
 		await get_tree().create_timer(0.05).timeout  # Задержка между пулями
@@ -90,15 +85,34 @@ func rotation_4bullets():
 	var bullets4 = bullet_scene4.instantiate()
 	bullet_setting(bullets4, bullet_speed, position)
 
+func shoot_straight_delayed(quantity):
+	var delay = 0.1  # Задержка между выстрелами
+	for i in range(quantity):
+		var bullet = bullet_scene.instantiate()
+		bullet.direction = direction
+		bullet_setting(bullet, bullet_speed+200, position)
+		await get_tree().create_timer(delay).timeout  # Ждём перед следующим выстрелом
 
+func shoot_in_4_directions():
+	var directions = [
+		Vector2(1, 1).normalized(),   # Вправо-вверх
+		Vector2(-1, 1).normalized(),   # Влево-вверх
+		Vector2(1, -1).normalized(),  # Вправо-вниз
+		Vector2(-1, -1).normalized()  # Влево-вниз
+	]
+	for direction in directions:
+		var bullet = bullet_scene.instantiate()
+		bullet.direction = direction
+		bullet_setting(bullet, bullet_speed, position)
 
-
-
-#func _on_Timer_timeout():
-	#for i in range(12):  # 12 пуль в круге
-		#var bullet = bullet_scene.instantiate()  # Создаём пулю
-		#var angle = i * (2 * PI / 12)        # Вычисляем угол (360°/12 = 30° на пулю)
-		#bullet.direction = Vector2(cos(angle), sin(angle))  # Направление (x=cos, y=sin)
-		#bullet.speed = bullet_speed           # Задаём скорость
-		#bullet.position = position            # Позиция спавна (где стоит PatternSpawner)
-		#get_parent().add_child(bullet)        # Добавляем пулю на сцену
+func shoot_in_4_directions2():
+	var directions = [
+		Vector2(1, 0).normalized(),   # Вправо-вверх
+		Vector2(-1, 0).normalized(),   # Влево-вверх
+		Vector2(0, 1).normalized(),  # Вправо-вниз
+		Vector2(0, -1).normalized()  # Влево-вниз
+	]
+	for direction in directions:
+		var bullet = bullet_scene.instantiate()
+		bullet.direction = direction
+		bullet_setting(bullet, bullet_speed, position)

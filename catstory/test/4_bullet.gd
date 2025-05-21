@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var speed = 600
-@export var direction = Vector2.DOWN
-@export var damage = 1
+@export var direction = Vector2.RIGHT
+
 
 func _ready() -> void:
 	$bullet.direction = Vector2.ZERO

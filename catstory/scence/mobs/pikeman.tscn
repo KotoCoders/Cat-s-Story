@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bp4moqtwordvg"]
+[gd_scene load_steps=17 format=3 uid="uid://bp4moqtwordvg"]
 
 [ext_resource type="PackedScene" uid="uid://ctqpeu4limjb1" path="res://scence/mobs/basic_enemy.tscn" id="1_x5ceg"]
 [ext_resource type="Texture2D" uid="uid://0jbbmgfxcxnt" path="res://aseprite/enemy1.png" id="2_2bq3o"]
 [ext_resource type="Script" uid="uid://cw3unngkqf7jg" path="res://scripts/enemy/pikeman.gd" id="2_3jsxr"]
+[ext_resource type="PackedScene" uid="uid://b0admhku5lr6p" path="res://test/bullet_patern.tscn" id="4_3jsxr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jsxr"]
 atlas = ExtResource("2_2bq3o")
@@ -87,13 +88,25 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3jsxr"]
+radius = 32.0
+height = 110.0
+
 [node name="pikeman" instance=ExtResource("1_x5ceg")]
 script = ExtResource("2_3jsxr")
+can_move = false
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(25, -15)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_cwevh")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.458621
+frame = 2
+frame_progress = 0.265693
+
+[node name="Bullet_Patern" parent="." index="5" instance=ExtResource("4_3jsxr")]
+position = Vector2(52, -66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
+shape = SubResource("CapsuleShape2D_3jsxr")

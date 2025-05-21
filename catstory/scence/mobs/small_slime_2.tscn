@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8o7rlrkc7i"]
+
+[ext_resource type="PackedScene" uid="uid://ctqpeu4limjb1" path="res://scence/mobs/basic_enemy.tscn" id="1_a0pb7"]
+[ext_resource type="Script" uid="uid://bhaaigm3ggw17" path="res://small_slime_2.gd" id="2_i0sar"]
+[ext_resource type="SpriteFrames" uid="uid://cgsifo22kymdi" path="res://smth/small_slime_anim.tres" id="3_i0sar"]
+[ext_resource type="PackedScene" uid="uid://b0admhku5lr6p" path="res://test/bullet_patern.tscn" id="4_23otx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_23otx"]
+radius = 32.0156
+
+[node name="small_slime2" instance=ExtResource("1_a0pb7")]
+script = ExtResource("2_i0sar")
+hp = 40
+speed_chase = 100
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -16)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_i0sar")
+animation = &"attack"
+
+[node name="Bullet_Patern" parent="." index="5" instance=ExtResource("4_23otx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_23otx")
