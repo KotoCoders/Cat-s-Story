@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cprynkwem8jdd"]
+
+[ext_resource type="PackedScene" uid="uid://vgy2ifcyvk40" path="res://scence/tilemaps/tile_map_level_1.tscn" id="1_2ppyg"]
+[ext_resource type="PackedScene" uid="uid://b5muqlbkudgng" path="res://scence/player/player.tscn" id="2_q0ug5"]
+
+[node name="level1" type="Node2D"]
+
+[node name="tile_map_level1" parent="." instance=ExtResource("1_2ppyg")]
+scale = Vector2(5, 5)
+
+[node name="player" parent="." instance=ExtResource("2_q0ug5")]
+position = Vector2(-52, 86)

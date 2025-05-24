@@ -208,7 +208,7 @@ radius = 31.7902
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7q24i"]
 radius = 7.2
-height = 26.9
+height = 17.5
 
 [sub_resource type="Animation" id="Animation_5aqop"]
 length = 0.001
@@ -580,7 +580,7 @@ debug_color = Color(0.708618, 0.68575, 0, 0.42)
 wait_time = 2.4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(0, 3)
+position = Vector2(-0.25, 5.75)
 shape = SubResource("CapsuleShape2D_7q24i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
