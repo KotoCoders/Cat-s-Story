@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://d32t6jxrigb0o"]
+
+[ext_resource type="Script" uid="uid://vh5ag5j1qypb" path="res://scence/UI/chat_box.gd" id="1_yfson"]
+[ext_resource type="Texture2D" uid="uid://c8q7attkf7nrc" path="res://assets/UI/pixel_art_large (3).png" id="2_jfll1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15ck4"]
+atlas = ExtResource("2_jfll1")
+region = Rect2(86, 0, 561, 211)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_maj08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15ck4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="chat_box" type="CanvasLayer"]
+script = ExtResource("1_yfson")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(632, 482)
+scale = Vector2(1.98667, 1.52995)
+sprite_frames = SubResource("SpriteFrames_maj08")
+
+[node name="TextLabe1" type="Label" parent="AnimatedSprite2D"]
+offset_left = -132.886
+offset_top = -9.80424
+offset_right = 194.114
+offset_bottom = 66.1958
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton" type="Button" parent="AnimatedSprite2D/TextLabe1"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 38.0
+offset_right = 340.0
+offset_bottom = 81.0
+text = "Далее"
