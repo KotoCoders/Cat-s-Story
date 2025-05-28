@@ -23,7 +23,7 @@ position = Vector2(-1494, -441)
 position = Vector2(-1771, -327)
 
 [node name="player" parent="." instance=ExtResource("2_fh1f2")]
-position = Vector2(73, -377)
+position = Vector2(-4101, -52)
 
 [node name="pickable_item" parent="." instance=ExtResource("5_63gtg")]
 position = Vector2(1439, -505)
@@ -44,19 +44,19 @@ position = Vector2(-4677, -69)
 position = Vector2(-3572, -487)
 
 [node name="pikeman" parent="." instance=ExtResource("7_je1cc")]
-position = Vector2(721, 1211)
+position = Vector2(317, 1884)
 
 [node name="pikeman2" parent="." instance=ExtResource("7_je1cc")]
-position = Vector2(-503, -198)
+position = Vector2(-1297, 1635)
 
 [node name="pikeman3" parent="." instance=ExtResource("7_je1cc")]
-position = Vector2(-2117, 1338)
+position = Vector2(-2013, 1369)
 
 [node name="big_slime" parent="." instance=ExtResource("8_ylwex")]
-position = Vector2(-3132, 879)
+position = Vector2(-3132, 1556)
 
 [node name="plant" parent="." instance=ExtResource("9_je1cc")]
 position = Vector2(-5149, 401)
 
 [node name="big_slime2" parent="." instance=ExtResource("8_ylwex")]
-position = Vector2(316, -36)
+position = Vector2(-485, 1856)
