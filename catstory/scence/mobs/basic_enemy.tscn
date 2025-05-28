@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctqpeu4limjb1"]
+[gd_scene load_steps=8 format=3 uid="uid://ctqpeu4limjb1"]
 
 [ext_resource type="Script" uid="uid://cvqtt0w8u0bw" path="res://scripts/enemy/basic_enemy.gd" id="1_msquw"]
+[ext_resource type="Texture2D" uid="uid://xluuoowx7kok" path="res://icon.svg" id="2_o3prf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msquw"]
 radius = 528.015
@@ -8,30 +9,30 @@ radius = 528.015
 [sub_resource type="CircleShape2D" id="CircleShape2D_o3prf"]
 radius = 846.048
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcgs4"]
+atlas = ExtResource("2_o3prf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msquw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcgs4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcke1"]
+radius = 59.0
+
 [node name="BasicEnemy" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_msquw")
-can_move = true
-
-[node name="Timers" type="Node2D" parent="."]
-
-[node name="idle_timer" type="Timer" parent="Timers"]
-autostart = true
-
-[node name="navigation_timer" type="Timer" parent="Timers"]
-wait_time = 0.2
-
-[node name="attack_cooldown_timer" type="Timer" parent="Timers"]
-wait_time = 2.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="Areas" type="Node2D" parent="."]
 
@@ -47,8 +48,27 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/exited"]
 shape = SubResource("CircleShape2D_o3prf")
 
-[connection signal="timeout" from="Timers/idle_timer" to="." method="idle_timer_timeout"]
-[connection signal="timeout" from="Timers/navigation_timer" to="." method="navigation_timer_timeout"]
-[connection signal="timeout" from="Timers/attack_cooldown_timer" to="." method="attack_cooldown_timer_timeout"]
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="idle_timer" type="Timer" parent="Timers"]
+autostart = true
+
+[node name="navigation_timer" type="Timer" parent="Timers"]
+wait_time = 0.2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_msquw")
+frame_progress = 0.960885
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kcke1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
 [connection signal="body_entered" from="Areas/entered" to="." method="body_entered_in_area"]
 [connection signal="body_exited" from="Areas/exited" to="." method="body_exited_from_area"]
+[connection signal="timeout" from="Timers/idle_timer" to="." method="idle_timer_timeout"]
+[connection signal="timeout" from="Timers/navigation_timer" to="." method="navigation_timer_timeout"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7lwsmgfgbej8"]
+
+[ext_resource type="Texture2D" uid="uid://bdjt12534c75c" path="res://assets/items/gold-coins-turn-around-animation-set.png" id="1_aq8c1"]
+[ext_resource type="Script" uid="uid://bj6ns1bjufg75" path="res://scence/UI/money.gd" id="1_o2urj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4nyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tlwk"]
+atlas = ExtResource("1_aq8c1")
+region = Rect2(28, 0, 250, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmj72"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tlwk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Money" type="Node2D"]
+script = ExtResource("1_o2urj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_a4nyr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cmj72")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
