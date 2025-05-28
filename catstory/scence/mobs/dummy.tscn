@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://eufpfiwxqdvj"]
+[gd_scene load_steps=6 format=3 uid="uid://eufpfiwxqdvj"]
 
 [ext_resource type="Script" uid="uid://bctorvge3bshd" path="res://scripts/enemy/dummy.gd" id="1_2ovgq"]
 [ext_resource type="Texture2D" uid="uid://dcxbkjwyonvld" path="res://aseprite/manecen.png" id="1_xvuu2"]
+[ext_resource type="PackedScene" uid="uid://b6hfem8nf3fnq" path="res://scence/UI/UI_Button/keyboard_e.tscn" id="3_r60lv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ovgq"]
 radius = 7.0
 
-[node name="dummy" type="StaticBody2D"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5aup7"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
 scale = Vector2(5, 5)
 collision_layer = 2
 collision_mask = 3
@@ -24,3 +29,17 @@ offset_top = -34.0
 offset_right = 48.0
 offset_bottom = -11.0
 horizontal_alignment = 1
+
+[node name="dummy_Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dummy_Area2D"]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_5aup7")
+
+[node name="Keyboard_E" parent="." instance=ExtResource("3_r60lv")]
+
+[connection signal="body_entered" from="dummy_Area2D" to="." method="_on_dummy_area_2d_body_entered"]
+[connection signal="body_entered" from="dummy_Area2D" to="Keyboard_E" method="_on_dummy_area_2d_body_entered"]
+[connection signal="body_exited" from="dummy_Area2D" to="." method="_on_dummy_area_2d_body_exited"]
+[connection signal="body_exited" from="dummy_Area2D" to="Keyboard_E" method="_on_dummy_area_2d_body_exited"]

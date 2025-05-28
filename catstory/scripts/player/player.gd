@@ -5,7 +5,13 @@ extends CharacterBody2D
 @export var max_hp = 10
 @export var hp = max_hp
 
+
 @export var speed = 500
+
+
+var can_talk_to_npc = false  # Может ли игрок говорить с NPC
+var current_npc = null       # NPC, с которым можно говорить
+var dialog_ui = null         # Ссылка на диалоговое окно
 
 @export var damage_claws = 20
 @export var damage_poof = 30
@@ -23,6 +29,7 @@ var inventory = {}
 #var bullet_scene = preload("res://scence/player/attack/bullet.tscn")
 
 
+
 enum{
 	MOVE,
 	DEATH,
@@ -31,7 +38,12 @@ enum{
 	DASH,
 	PIU
 }
-
+func _ready():
+	$"../inventory".visible = false
+	#dialog_ui = preload("res://scence/chat_box.tscn").instantiate()
+	#get_tree().root.add_child(dialog_ui)
+	#dialog_ui.hide()
+	
 var state = MOVE
 
 func _physics_process(_delta):
@@ -124,8 +136,24 @@ func attack():
 
 func damage_aplication(body):
 	if body.name != "player":
-		if body.has_method("signal_get_damage"):
+  		if body.has_method("signal_get_damage"):
 			body.signal_get_damage(damage_claws, "claws", self.global_position)
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("chat") and can_talk_to_npc and current_npc and not $"../chat_box".started_chat:
+		$"../chat_box".visible = not $"../chat_box".visible
+		$"../chat_box".start_dialog(current_npc.dialog_lines)
+	if event.is_action_pressed("Open_Inventory"):  
+		$"../inventory".visible = not $"../inventory".visible  
+		if ($"../inventory".visible):
+			$Camera2D.set_target_offset([-70, 0])
+			$Camera2D.zoom_to(Vector2(1.5, 1.5), 0.5)
+		else:
+			$Camera2D.set_target_offset([0, 0])
+			$Camera2D.zoom_to($Camera2D.standart_zoom, 0.5)
+
+
 
 func get_damage(damage):
 	if can_get_damage:
@@ -166,3 +194,4 @@ func _on_poof_timer_duration_timeout() -> void:
 	#bullet.rotation = $Gun.rotation
 	#bullet.linear_velocity = Vector2(bullet_speed,0).rotated($Gun.rotation)
 	#get_tree().get_root().add_child(bullet) 
+

@@ -1,10 +1,17 @@
+
 [gd_scene load_steps=41 format=3 uid="uid://b5muqlbkudgng"]
 
+
 [ext_resource type="Script" uid="uid://cdvlo5cvs6wls" path="res://scripts/player/player.gd" id="1_b2n7d"]
+[ext_resource type="Script" uid="uid://dlh4ycq73auln" path="res://scence/player/camera_2d.gd" id="2_1rhml"]
 [ext_resource type="Texture2D" uid="uid://b4vv4mmktnsqp" path="res://aseprite/player.png" id="2_wblfa"]
 [ext_resource type="Texture2D" uid="uid://qdfuo3y5qcvk" path="res://assets/player/gun.png" id="3_5lrru"]
 [ext_resource type="Texture2D" uid="uid://xluuoowx7kok" path="res://icon.svg" id="4_8w8va"]
 [ext_resource type="Texture2D" uid="uid://cg4bjf8yha5gh" path="res://assets/Effect and FX Pixel All Free/Part 1/06.png" id="5_wblfa"]
+[ext_resource type="PackedScene" uid="uid://cglbyvsodpn1s" path="res://scence/UI/inventory.tscn" id="6_5aqop"]
+[ext_resource type="PackedScene" uid="uid://d32t6jxrigb0o" path="res://scence/UI/chat_box.tscn" id="8_ewase"]
+[ext_resource type="PackedScene" uid="uid://dcmm56jrn5cvm" path="res://scence/UI/HP_UI/canvas_layer.tscn" id="9_qjq2c"]
+[ext_resource type="PackedScene" uid="uid://x4vawkc0ttov" path="res://scence/UI/UI_Button/mouse_1.tscn" id="10_nxy5l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_614ix"]
 atlas = ExtResource("2_wblfa")
@@ -519,6 +526,7 @@ wait_time = 1.5
 zoom = Vector2(0.7, 0.7)
 process_callback = 0
 position_smoothing_enabled = true
+script = ExtResource("2_1rhml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 texture_filter = 1
@@ -580,7 +588,9 @@ debug_color = Color(0.708618, 0.68575, 0, 0.42)
 wait_time = 2.4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+
 position = Vector2(-0.25, 5.75)
+
 shape = SubResource("CapsuleShape2D_7q24i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
@@ -588,7 +598,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_1rhml")
 }
 
+
+[node name="inventory" parent="." instance=ExtResource("6_5aqop")]
+
+[node name="chat_box" parent="." instance=ExtResource("8_ewase")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("9_qjq2c")]
+
+[node name="Mouse_1" parent="." instance=ExtResource("10_nxy5l")]
+visible = false
+
+
 [connection signal="timeout" from="player/Timers/dash_cooldawn" to="player" method="_on_dash_cooldawn_timeout"]
+
 [connection signal="body_entered" from="player/Claws/Area_Damage_Application" to="player" method="damage_aplication"]
 [connection signal="body_entered" from="player/Poof/PoofArea" to="player" method="_on_poof_area_body_entered"]
 [connection signal="timeout" from="player/Poof/PoofTimer" to="player" method="_on_poof_timer_timeout"]
