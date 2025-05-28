@@ -37,4 +37,3 @@ func signal_get_damage(damage:int, type, player_pos):
 		hp-= damage
 	if type == "poof":
 		hp -= damage
-

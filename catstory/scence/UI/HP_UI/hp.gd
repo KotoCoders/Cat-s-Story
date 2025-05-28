@@ -7,10 +7,8 @@ func _ready():
 #
 #
 func hp_changed(dmg):
-	print("pisya popa")
 	print(dmg)
 	if(dmg >= 80):
-		print(200)
 		$Control/HP.play("HP_MAX")
 	elif(dmg >= 60):
 		$Control/HP.play("HP_80%")

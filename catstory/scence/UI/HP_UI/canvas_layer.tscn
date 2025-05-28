@@ -88,7 +88,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HP" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(446.374, 34)
-scale = Vector2(1.18249, 0.745455)
+position = Vector2(194, 27)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_y1xtn")
 animation = &"HP_MAX"
