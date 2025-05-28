@@ -16,8 +16,6 @@ func _process(_delta: float) -> void:
 		await get_tree().create_timer(3).timeout
 		queue_free()
 
-func signal_take_damage(damage:int, _type):
-	hp-=damage
 
 
 func _on_dummy_area_2d_body_entered(body):
@@ -32,3 +30,11 @@ func _on_dummy_area_2d_body_exited(body):
 	if body.name == "player":
 		body.can_talk_to_npc = false
 		body.current_npc = null
+
+
+func signal_get_damage(damage:int, type, player_pos):
+	if type == "claws":
+		hp-= damage
+	if type == "poof":
+		hp -= damage
+
