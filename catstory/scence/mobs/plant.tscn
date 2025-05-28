@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://byoc4amfv5uhl"]
+[gd_scene load_steps=17 format=3 uid="uid://byoc4amfv5uhl"]
 
 [ext_resource type="PackedScene" uid="uid://ctqpeu4limjb1" path="res://scence/mobs/basic_enemy.tscn" id="1_qt4s0"]
-[ext_resource type="Script" uid="uid://lutpvgjblrrw" path="res://basic_enemy.gd" id="2_y7y3q"]
+[ext_resource type="Script" uid="uid://dl6f8iymfya5j" path="res://scripts/enemy/plant.gd" id="2_y7y3q"]
 [ext_resource type="Texture2D" uid="uid://b7mb6mnlckpor" path="res://aseprite/plant.png" id="3_g7l4j"]
+[ext_resource type="PackedScene" uid="uid://b0admhku5lr6p" path="res://test/bullet_patern.tscn" id="4_g7l4j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18vgx"]
 atlas = ExtResource("3_g7l4j")
@@ -77,8 +78,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bkgh0")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"attack",
 "speed": 10.0
 }]
 
@@ -92,7 +93,7 @@ can_move = false
 [node name="AnimatedSprite2D" parent="." index="1"]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rx2rh")
-frame_progress = 0.0413458
+animation = &"attack"
 
 [node name="Areas" parent="." index="4"]
 visible = false
@@ -100,3 +101,5 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 position = Vector2(1, 10)
 shape = SubResource("CircleShape2D_pel0s")
+
+[node name="Bullet_Patern" parent="." index="6" instance=ExtResource("4_g7l4j")]

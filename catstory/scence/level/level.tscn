@@ -15,7 +15,47 @@ scale = Vector2(5, 5)
 position = Vector2(-37, -344)
 
 [node name="player" parent="." instance=ExtResource("2_fh1f2")]
+
 position = Vector2(-3.00002, 0.999992)
 
 [node name="BasicEnemy" parent="." instance=ExtResource("4_no7am")]
 position = Vector2(-1048, 581)
+
+position = Vector2(-4101, -52)
+
+[node name="pickable_item" parent="." instance=ExtResource("5_63gtg")]
+position = Vector2(1439, -505)
+
+[node name="pickable_item2" parent="." instance=ExtResource("5_63gtg")]
+position = Vector2(1446, -341)
+
+[node name="pickable_item3" parent="." instance=ExtResource("5_63gtg")]
+position = Vector2(1394, -235)
+
+[node name="Bullet_Patern" parent="." instance=ExtResource("7_8nuhu")]
+position = Vector2(-5584, -281)
+
+[node name="Bullet_Patern2" parent="." instance=ExtResource("7_8nuhu")]
+position = Vector2(-4677, -69)
+
+[node name="4bullet" parent="." instance=ExtResource("7_ylwex")]
+position = Vector2(-3572, -487)
+
+[node name="pikeman" parent="." instance=ExtResource("7_je1cc")]
+position = Vector2(317, 1884)
+
+[node name="pikeman2" parent="." instance=ExtResource("7_je1cc")]
+position = Vector2(-1297, 1635)
+
+[node name="pikeman3" parent="." instance=ExtResource("7_je1cc")]
+position = Vector2(-2013, 1369)
+
+[node name="big_slime" parent="." instance=ExtResource("8_ylwex")]
+position = Vector2(-3132, 1556)
+
+[node name="plant" parent="." instance=ExtResource("9_je1cc")]
+position = Vector2(-5149, 401)
+
+[node name="big_slime2" parent="." instance=ExtResource("8_ylwex")]
+position = Vector2(-485, 1856)
+

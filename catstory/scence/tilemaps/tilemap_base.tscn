@@ -1,12 +1,23 @@
-[gd_scene load_steps=141 format=3 uid="uid://bpo51ee4067ve"]
+[gd_scene load_steps=163 format=3 uid="uid://bpo51ee4067ve"]
 
 [ext_resource type="Texture2D" uid="uid://d0a33ihumm0gt" path="res://assets/MagicMarket/Tilesets/TilesetNatures.png" id="1_5xb1w"]
 [ext_resource type="Texture2D" uid="uid://coes7loxvoont" path="res://assets/MagicMarket/Tilesets/TilesetProps.png" id="2_lkrto"]
 [ext_resource type="Texture2D" uid="uid://c2dpm5nvup4up" path="res://assets/MagicMarket/Tilesets/TilesetProps02.png" id="3_rgucb"]
 [ext_resource type="Texture2D" uid="uid://cgy3ag2rq118t" path="res://assets/MagicMarket/Tilesets/Items.png" id="4_0xh17"]
 [ext_resource type="Texture2D" uid="uid://cp3cqagug0r3v" path="res://aseprite/Wooden_House_Walls_Tilset.png" id="5_4oo64"]
+[ext_resource type="Texture2D" uid="uid://q5r3ytrhtdxs" path="res://assets/MagicMarket/Animations/branches.png" id="5_lkrto"]
+[ext_resource type="Texture2D" uid="uid://b540sgvkgvfkw" path="res://assets/MagicMarket/Animations/Cauldron.png" id="6_0xh17"]
 [ext_resource type="Texture2D" uid="uid://ckcwddx3y8yxd" path="res://aseprite/Doors.png" id="6_aptvr"]
+[ext_resource type="Texture2D" uid="uid://dmk4gfakywnt5" path="res://assets/MagicMarket/Animations/Device.png" id="7_4oo64"]
 [ext_resource type="Texture2D" uid="uid://cq0bwk80g505t" path="res://aseprite/Wooden_House_Roof_Tilset.png" id="7_clsu5"]
+[ext_resource type="Texture2D" uid="uid://b3ppf22grw8mx" path="res://assets/MagicMarket/Animations/Lantern.png" id="8_54vis"]
+[ext_resource type="Texture2D" uid="uid://3s4rhc4ma614" path="res://assets/MagicMarket/Animations/Lily pad.png" id="10_od378"]
+[ext_resource type="Texture2D" uid="uid://c1h7h514vvgd5" path="res://assets/MagicMarket/Animations/Lily pads.png" id="11_q78wk"]
+[ext_resource type="Texture2D" uid="uid://ie448sp1byw6" path="res://assets/MagicMarket/Animations/Log.png" id="12_bri7o"]
+[ext_resource type="Texture2D" uid="uid://drfbkw4t47lqc" path="res://assets/MagicMarket/Animations/Plant01.png" id="13_0xpkn"]
+[ext_resource type="Texture2D" uid="uid://cx2y6luvq5klg" path="res://assets/MagicMarket/Animations/Plant02.png" id="14_qq336"]
+[ext_resource type="Texture2D" uid="uid://bs78jf2467y48" path="res://assets/MagicMarket/Animations/Plant03.png" id="15_8qy2g"]
+[ext_resource type="Texture2D" uid="uid://ccjncgwt46bbx" path="res://assets/MagicMarket/Animations/Plant04.png" id="16_xnv5b"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2cwog"]
 load_path = "res://.godot/imported/Dungeon_Tileset.png-7e11c939b648813e59b0e4ebeb1fec03.ctex"
@@ -2324,25 +2335,19 @@ texture = ExtResource("5_4oo64")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:0/0 = 0
-0:0/0/terrain = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 3, 8, 3, -8, 8, -8)
 0:1/0 = 0
-0:1/0/terrain = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 3, 8, 3, -8, 8, -8)
 0:2/0 = 0
-0:2/0/terrain = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 3, 8, 3, -8, 8, -8)
 1:2/0 = 0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
 2:1/0 = 0
-2:1/0/terrain = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3, -8, -3, 8, -8, 8)
 2:0/0 = 0
-2:0/0/terrain = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3, -8, -3, 8, -8, 8)
 2:2/0 = 0
-2:2/0/terrain = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3, -8, -3, 8, -8, 8)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -2658,6 +2663,77 @@ texture = ExtResource("2_lkrto")
 9:12/0 = 0
 9:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -2, -3, 7, 3, 7, 3, -2)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgucb"]
+texture = ExtResource("5_lkrto")
+0:0/animation_columns = 4
+0:0/animation_frame_0/duration = 0.5
+0:0/animation_frame_1/duration = 0.5
+0:0/animation_frame_2/duration = 0.5
+0:0/animation_frame_3/duration = 0.5
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aptvr"]
+texture = ExtResource("6_0xh17")
+0:0/animation_columns = 4
+0:0/animation_frame_0/duration = 0.25
+0:0/animation_frame_1/duration = 0.25
+0:0/animation_frame_2/duration = 0.25
+0:0/animation_frame_3/duration = 0.25
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, 3, -8, 7, 0, 4, 7, -4, 7, -7, 0)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clsu5"]
+texture = ExtResource("7_4oo64")
+1:0/animation_columns = 4
+1:0/animation_separation = Vector2i(1, 0)
+1:0/animation_speed = 4.0
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/0 = 0
+0:0/animation_columns = 4
+0:0/animation_separation = Vector2i(1, 0)
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:1/animation_columns = 4
+0:1/animation_separation = Vector2i(1, 0)
+0:1/animation_speed = 4.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+1:1/animation_columns = 4
+1:1/animation_separation = Vector2i(1, 0)
+1:1/animation_speed = 4.0
+1:1/animation_frame_0/duration = 1.0
+1:1/animation_frame_1/duration = 1.0
+1:1/animation_frame_2/duration = 1.0
+1:1/animation_frame_3/duration = 1.0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_51yif"]
+texture = ExtResource("8_54vis")
+0:0/animation_columns = 4
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:1/animation_columns = 4
+0:1/animation_speed = 4.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76fog"]
 texture = ExtResource("3_rgucb")
 0:0/0 = 0
@@ -2773,6 +2849,77 @@ texture = ExtResource("3_rgucb")
 6:6/0 = 0
 7:6/0 = 0
 7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -8, -2, -8, -2, 8, 2, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7i7mk"]
+texture = ExtResource("10_od378")
+0:0/animation_columns = 4
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y088"]
+texture = ExtResource("11_q78wk")
+0:0/animation_columns = 3
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dd4v6"]
+texture = ExtResource("12_bri7o")
+0:0/animation_columns = 4
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:1/animation_columns = 4
+0:1/animation_speed = 4.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmbga"]
+texture = ExtResource("13_0xpkn")
+0:0/animation_columns = 4
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihcyk"]
+texture = ExtResource("14_qq336")
+0:0/animation_columns = 3
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8e75e"]
+texture = ExtResource("15_8qy2g")
+0:0/animation_columns = 2
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fvgc"]
+texture = ExtResource("16_xnv5b")
+0:0/animation_columns = 2
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2n7an"]
 resource_name = "items"
@@ -2897,6 +3044,17 @@ sources/3 = SubResource("TileSetAtlasSource_2n7an")
 sources/0 = SubResource("TileSetAtlasSource_fglu8")
 sources/1 = SubResource("TileSetAtlasSource_7c1jr")
 sources/2 = SubResource("TileSetAtlasSource_76fog")
+sources/16 = SubResource("TileSetAtlasSource_rgucb")
+sources/17 = SubResource("TileSetAtlasSource_aptvr")
+sources/18 = SubResource("TileSetAtlasSource_clsu5")
+sources/19 = SubResource("TileSetAtlasSource_51yif")
+sources/20 = SubResource("TileSetAtlasSource_7i7mk")
+sources/21 = SubResource("TileSetAtlasSource_1y088")
+sources/22 = SubResource("TileSetAtlasSource_dd4v6")
+sources/23 = SubResource("TileSetAtlasSource_bmbga")
+sources/24 = SubResource("TileSetAtlasSource_ihcyk")
+sources/25 = SubResource("TileSetAtlasSource_8e75e")
+sources/26 = SubResource("TileSetAtlasSource_8fvgc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r21p5"]
 texture = ExtResource("7_clsu5")
