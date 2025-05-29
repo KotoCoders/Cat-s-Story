@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dls4x35t3lqlb"
+path="res://.godot/imported/Тема для битвы с боссом.wav-8bb8703b4feddcb1f1adb4edb9469ccb.sample"
+
+[deps]
+
+source_file="res://sound/OST/Тема для битвы с боссом.wav"
+dest_files=["res://.godot/imported/Тема для битвы с боссом.wav-8bb8703b4feddcb1f1adb4edb9469ccb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

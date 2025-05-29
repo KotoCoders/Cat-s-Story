@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccmpnyesed0nv"]
+
+[ext_resource type="PackedScene" uid="uid://ceni0e2o210iq" path="res://scence/pickable_item/basic_pickable_item.tscn" id="1_8hwj8"]
+[ext_resource type="Texture2D" uid="uid://s4pkh5ccdcne" path="res://aseprite/wood.png" id="2_j0ljm"]
+
+[node name="wood" instance=ExtResource("1_8hwj8")]
+item_name = "wood"
+amount = 1
+
+[node name="Alarm" parent="." index="1"]
+texture = ExtResource("2_j0ljm")

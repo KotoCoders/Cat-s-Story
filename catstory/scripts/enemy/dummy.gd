@@ -32,7 +32,7 @@ func _on_dummy_area_2d_body_exited(body):
 		body.current_npc = null
 
 
-func signal_get_damage(damage:int, type, player_pos):
+func signal_get_damage(damage:int, type, _player_pos):
 	if type == "claws":
 		hp-= damage
 	if type == "poof":

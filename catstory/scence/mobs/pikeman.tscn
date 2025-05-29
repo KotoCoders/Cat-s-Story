@@ -105,6 +105,9 @@ autoplay = "idle"
 frame = 2
 frame_progress = 0.265693
 
+[node name="Areas" parent="." index="4"]
+visible = false
+
 [node name="Bullet_Patern" parent="." index="5" instance=ExtResource("4_3jsxr")]
 position = Vector2(52, -66)
 

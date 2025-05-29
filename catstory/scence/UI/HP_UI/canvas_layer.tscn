@@ -78,7 +78,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="HP" type="CanvasLayer"]
 script = ExtResource("2_padss")
 
 [node name="Control" type="Control" parent="."]

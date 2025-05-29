@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbjxqxnsewbdr"]
+
+[ext_resource type="Texture2D" uid="uid://ch0qoa2tubyuq" path="res://assets/neko_cafe/neko-cafe-food.png" id="1_1jiys"]
+[ext_resource type="Script" uid="uid://c0bs732yc4u5c" path="res://scripts/pickable_item/potion_of_health.gd" id="1_lkh5r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qv82w"]
+radius = 41.0122
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkh5r"]
+atlas = ExtResource("1_1jiys")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv82w"]
+atlas = ExtResource("1_1jiys")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18kg7"]
+atlas = ExtResource("1_1jiys")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rxfe"]
+atlas = ExtResource("1_1jiys")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0oy4"]
+atlas = ExtResource("1_1jiys")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8gh0"]
+atlas = ExtResource("1_1jiys")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bh0fh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkh5r")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv82w")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18kg7")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rxfe")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0oy4")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8gh0")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}]
+
+[node name="potion_of_health" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_lkh5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qv82w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_bh0fh")
+animation = &"1"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

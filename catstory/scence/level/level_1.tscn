@@ -1,12 +1,90 @@
-[gd_scene load_steps=3 format=3 uid="uid://cprynkwem8jdd"]
+[gd_scene load_steps=11 format=3 uid="uid://cprynkwem8jdd"]
 
 [ext_resource type="PackedScene" uid="uid://vgy2ifcyvk40" path="res://scence/tilemaps/tile_map_level_1.tscn" id="1_2ppyg"]
+[ext_resource type="Script" uid="uid://p8g2t0xe5c52" path="res://scripts/level/level_1.gd" id="1_8yupj"]
 [ext_resource type="PackedScene" uid="uid://b5muqlbkudgng" path="res://scence/player/player.tscn" id="2_q0ug5"]
+[ext_resource type="PackedScene" uid="uid://duqbiprgs6g6a" path="res://scence/mobs/big_slime.tscn" id="3_sse31"]
+[ext_resource type="PackedScene" uid="uid://t3u21lcbuc8s" path="res://scence/mobs/small_slime.tscn" id="4_kyh1d"]
+[ext_resource type="PackedScene" uid="uid://b8o7rlrkc7i" path="res://scence/mobs/small_slime_2.tscn" id="5_o87mw"]
+[ext_resource type="PackedScene" uid="uid://byoc4amfv5uhl" path="res://scence/mobs/plant.tscn" id="6_576tw"]
+[ext_resource type="PackedScene" uid="uid://ccmpnyesed0nv" path="res://scence/pickable_item/wood.tscn" id="7_kyh1d"]
+[ext_resource type="AudioStream" uid="uid://dmkryv5cyjl1n" path="res://sound/OST/Подводка к эпичной теме.wav" id="8_576tw"]
+[ext_resource type="AudioStream" uid="uid://cupet0gsd00ec" path="res://sound/OST/Эпичная тема.wav" id="9_8yupj"]
 
 [node name="level1" type="Node2D"]
+script = ExtResource("1_8yupj")
 
 [node name="tile_map_level1" parent="." instance=ExtResource("1_2ppyg")]
 scale = Vector2(5, 5)
 
+[node name="items" type="Node2D" parent="."]
+
+[node name="wood" parent="items" instance=ExtResource("7_kyh1d")]
+position = Vector2(1081, 1569)
+
+[node name="mobs" type="Node2D" parent="."]
+
+[node name="big_slime" parent="mobs" instance=ExtResource("3_sse31")]
+position = Vector2(2073, 212)
+
+[node name="small_slime" parent="mobs" instance=ExtResource("4_kyh1d")]
+position = Vector2(85, 964)
+
+[node name="small_slime2" parent="mobs" instance=ExtResource("4_kyh1d")]
+position = Vector2(-796, 573)
+
+[node name="small_slime3" parent="mobs" instance=ExtResource("4_kyh1d")]
+position = Vector2(-862, 893)
+
+[node name="small_slime4" parent="mobs" instance=ExtResource("5_o87mw")]
+position = Vector2(-1246, 71)
+
+[node name="plant" parent="mobs" instance=ExtResource("6_576tw")]
+position = Vector2(903, 1488)
+
+[node name="small_slime5" parent="mobs" instance=ExtResource("4_kyh1d")]
+position = Vector2(1241, 1569)
+
+[node name="small_slime6" parent="mobs" instance=ExtResource("4_kyh1d")]
+position = Vector2(1093, 1682)
+
+[node name="small_slime7" parent="mobs" instance=ExtResource("5_o87mw")]
+position = Vector2(1002, 1687)
+
+[node name="wood" parent="mobs" instance=ExtResource("7_kyh1d")]
+position = Vector2(327, -33)
+
+[node name="wood2" parent="mobs" instance=ExtResource("7_kyh1d")]
+position = Vector2(-1078, 717)
+
+[node name="wood3" parent="mobs" instance=ExtResource("7_kyh1d")]
+position = Vector2(-1344, 139)
+
+[node name="small_slime8" parent="mobs" instance=ExtResource("4_kyh1d")]
+position = Vector2(2211, 326)
+
+[node name="small_slime9" parent="mobs" instance=ExtResource("5_o87mw")]
+position = Vector2(2271, 203)
+
+[node name="small_slime10" parent="mobs" instance=ExtResource("5_o87mw")]
+position = Vector2(2043, 377)
+
+[node name="small_slime11" parent="mobs" instance=ExtResource("5_o87mw")]
+position = Vector2(1905, 169)
+
 [node name="player" parent="." instance=ExtResource("2_q0ug5")]
 position = Vector2(-52, 86)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource("8_576tw")
+volume_db = 8.0
+autoplay = true
+bus = &"music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource("9_8yupj")
+
+[connection signal="finished" from="Node2D/AudioStreamPlayer1" to="." method="_on_audio_stream_player_1_finished"]
+[connection signal="finished" from="Node2D/AudioStreamPlayer2" to="." method="_on_audio_stream_player_2_finished"]

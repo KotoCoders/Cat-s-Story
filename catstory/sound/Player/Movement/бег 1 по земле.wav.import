@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csrtcqvybnbfn"
+path="res://.godot/imported/бег 1 по земле.wav-3677404c7605f5eb8ee17d88ad04cc51.sample"
+
+[deps]
+
+source_file="res://sound/Player/Movement/бег 1 по земле.wav"
+dest_files=["res://.godot/imported/бег 1 по земле.wav-3677404c7605f5eb8ee17d88ad04cc51.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

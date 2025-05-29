@@ -7,7 +7,7 @@ func _ready() -> void:
 	visible = false
 	pass 
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if ui_elements:
 		if ui_elements[0].visible:
 			$AnimatedSprite2D.stop()

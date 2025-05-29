@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://dcmm56jrn5cvm"]
+
+[ext_resource type="Script" uid="uid://8673i0ux15wd" path="res://scence/UI/HP_UI/hp.gd" id="2_padss"]
+[ext_resource type="Texture2D" uid="uid://oj2cifo7j5hi" path="res://assets/UI/pixel_art_large (1).png" id="2_tmqkr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhcfv"]
+atlas = ExtResource("2_tmqkr")
+region = Rect2(0, 553, 774, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7q8h"]
+atlas = ExtResource("2_tmqkr")
+region = Rect2(0, 443, 774, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xodu"]
+atlas = ExtResource("2_tmqkr")
+region = Rect2(0, 333, 774, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmwoa"]
+atlas = ExtResource("2_tmqkr")
+region = Rect2(0, 223, 774, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n4kc"]
+atlas = ExtResource("2_tmqkr")
+region = Rect2(0, 113, 774, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3aiv"]
+atlas = ExtResource("2_tmqkr")
+region = Rect2(0, 3, 774, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1xtn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhcfv")
+}],
+"loop": true,
+"name": &"HP_0%",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7q8h")
+}],
+"loop": true,
+"name": &"HP_20%",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xodu")
+}],
+"loop": true,
+"name": &"HP_40%",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmwoa")
+}],
+"loop": true,
+"name": &"HP_60%",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n4kc")
+}],
+"loop": true,
+"name": &"HP_80%",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3aiv")
+}],
+"loop": true,
+"name": &"HP_MAX",
+"speed": 5.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("2_padss")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(194, 27)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_y1xtn")
+animation = &"HP_MAX"

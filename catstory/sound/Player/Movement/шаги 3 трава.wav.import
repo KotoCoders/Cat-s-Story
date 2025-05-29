@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbnpwiodqxruo"
+path="res://.godot/imported/шаги 3 трава.wav-c0659718bb816e57b852486a0cc63436.sample"
+
+[deps]
+
+source_file="res://sound/Player/Movement/шаги 3 трава.wav"
+dest_files=["res://.godot/imported/шаги 3 трава.wav-c0659718bb816e57b852486a0cc63436.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

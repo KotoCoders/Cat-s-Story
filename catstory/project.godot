@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CatStory"
-run/main_scene="res://scence/level/level.tscn"
+run/main_scene="uid://ca7svvhcpkbt8"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -31,6 +31,21 @@ movie_writer/movie_file="C:/юфу__4_семестр/test2.avi"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
+
+[importer_defaults]
+
+wav={
+"compress/mode": 2,
+"edit/loop_begin": 0,
+"edit/loop_end": -1,
+"edit/loop_mode": 0,
+"edit/normalize": false,
+"edit/trim": false,
+"force/8_bit": false,
+"force/max_rate": false,
+"force/max_rate_hz": 44100,
+"force/mono": false
+}
 
 [input]
 

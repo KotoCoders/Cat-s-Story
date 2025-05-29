@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctqpeu4limjb1"]
+[gd_scene load_steps=7 format=3 uid="uid://ctqpeu4limjb1"]
 
 [ext_resource type="Script" uid="uid://cvqtt0w8u0bw" path="res://scripts/enemy/basic_enemy.gd" id="1_msquw"]
+[ext_resource type="AudioStream" uid="uid://bfqxpptdxtely" path="res://sound/Player/Attack/Fight, Bodyfall, Outdoors Ground, Grass SND23806.wav" id="2_o3prf"]
+[ext_resource type="AudioStream" uid="uid://bnqad0eom26e3" path="res://sound/Player/Death.mp3" id="3_kcgs4"]
+[ext_resource type="AudioStream" uid="uid://dr04yc0asjets" path="res://sound/Player/Attack/mixkit-impact-of-a-blow-2150.wav" id="4_6amcb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msquw"]
 radius = 528.015
@@ -46,6 +49,18 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/exited"]
 shape = SubResource("CircleShape2D_o3prf")
+
+[node name="Sound" type="Node2D" parent="."]
+
+[node name="death" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("3_kcgs4")
+bus = &"sound"
+
+[node name="get_damage" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("2_o3prf")
+
+[node name="take_damage" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("4_6amcb")
 
 [connection signal="timeout" from="Timers/idle_timer" to="." method="idle_timer_timeout"]
 [connection signal="timeout" from="Timers/navigation_timer" to="." method="navigation_timer_timeout"]

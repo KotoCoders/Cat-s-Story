@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 
-@export var max_hp = 10
+@export var max_hp = 5
 @export var hp = max_hp
 
 
@@ -57,6 +57,8 @@ func _physics_process(_delta):
 			POOF_STATE()
 		DASH:
 			DASH_STATE()
+		DEATH:
+			DEATH_STATE()
 		
 	
 func MOVE_STATE():
@@ -64,16 +66,26 @@ func MOVE_STATE():
 	velocity = direction * speed
 	if direction.x == 0 and direction.y == 0:
 		anim.play("idle")
+		if $Sounds/movement.playing:
+			$Sounds/movement.stop()
 	if direction.x < 0:
 		anim.play("walk_aside")
 		anim.flip_h = true
+		if !$Sounds/movement.playing:
+			$Sounds/movement.play()
 	if direction.x > 0:
 		anim.play("walk_aside")
 		anim.flip_h = false
+		if !$Sounds/movement.playing:
+			$Sounds/movement.play()
 	if direction.y < 0 and direction.x == 0:
 		anim.play("walk_up")
+		if !$Sounds/movement.playing:
+			$Sounds/movement.play()
 	if direction.y > 0 and direction.x == 0:
 		anim.play("walk_down")
+		if !$Sounds/movement.playing:
+			$Sounds/movement.play()
 	
 
 	if Input.is_action_just_pressed("action"):
@@ -119,6 +131,13 @@ func DASH_STATE():
 	move_and_slide()
 	state = MOVE
 
+func DEATH_STATE():
+	print("ты вмэр")
+	if !$Sounds/death.playing:
+		$Sounds/death.play()
+	await get_tree().create_timer(1).timeout
+	
+
 
 func pick_up_item(item_name, amount):
 	if inventory.has(item_name):
@@ -131,6 +150,8 @@ func attack():
 	$Claws.look_at(get_global_mouse_position())
 	speed = speed*0.25
 	$AnimationPlayer.play("attactk")
+	if !$Sounds/hit_air.playing:
+		$Sounds/hit_air.play()
 	await $AnimationPlayer.animation_finished
 	speed = speed*4
 
@@ -158,13 +179,24 @@ func _input(event: InputEvent) -> void:
 func get_damage(damage):
 	if can_get_damage:
 		hp -= damage
+		if hp <=0:
+			state = DEATH
 		print("получен урон, сейчас: ", hp)
 		can_get_damage = false
+		$Sounds/get_damage.play()
 		$AnimatedSprite2D.modulate = Color.ORANGE_RED
 		await get_tree().create_timer(0.7).timeout
 		$AnimatedSprite2D.modulate = Color.WHITE
 		$"../CanvasLayer".hp_changed(hp)
 		can_get_damage = true
+
+func get_health_potion():
+	hp += 1
+	if hp > max_hp:
+		hp = max_hp
+	$"../CanvasLayer".hp_changed(hp)
+
+
 
 func _on_poof_area_body_entered(body):
 	if body.name != "player" and body.has_method("signal_get_damage"):

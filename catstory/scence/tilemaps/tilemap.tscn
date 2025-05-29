@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://dd8ch3dsedabv"]
 
-[ext_resource type="Texture2D" uid="uid://2j5lndce7g87" path="res://assets/MagicMarket/Tilesets/Dungeon_Tileset.png" id="1_7c1jr"]
+[ext_resource type="Texture2D" uid="uid://2j5lndce7g87" path="res://assets/tileset/Dungeon_Tileset.png" id="1_7c1jr"]
 [ext_resource type="Texture2D" uid="uid://j1evyxuxhhob" path="res://assets/tileset/TilesetFloor.png" id="1_clagt"]
 [ext_resource type="Texture2D" uid="uid://d0a33ihumm0gt" path="res://assets/MagicMarket/Tilesets/TilesetNatures.png" id="1_fglu8"]
 [ext_resource type="Texture2D" uid="uid://c2dpm5nvup4up" path="res://assets/MagicMarket/Tilesets/TilesetProps02.png" id="3_7c1jr"]

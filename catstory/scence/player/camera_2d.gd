@@ -24,7 +24,7 @@ func zoom_to(new_zoom: Vector2, duration: float = 1.0):
 	tween.tween_property(self, "zoom", target_zoom, duration)
 	tween.set_ease(Tween.EASE_IN_OUT)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	position.x += min(target[0] - cur[0], MAX_SPEED)
 	position.y += min(target[1] - cur[1], MAX_SPEED)
 	cur[0] += min(target[0] - cur[0], MAX_SPEED)

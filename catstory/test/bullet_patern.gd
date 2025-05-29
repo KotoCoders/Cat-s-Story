@@ -59,6 +59,16 @@ func circle_12():
 		
 		bullet_setting(bullet, bullet_speed, position)
 
+func circle_12_2():
+	var offset_angle = deg_to_rad(15)  # Смещение на 15° (переводим в радианы)
+	
+	for i in range(12):  # 12 пуль в круге
+		var bullet = bullet_scene.instantiate()  
+		var angle = offset_angle + i * (2 * PI / 12)  # Основной угол (30° на пулю) + смещение
+		bullet.direction = Vector2(cos(angle), sin(angle))  # Направление (x=cos, y=sin)
+		
+		bullet_setting(bullet, bullet_speed, position)
+
 func beep():
 	for i in range(5):
 		var bullet = bullet_scene.instantiate()

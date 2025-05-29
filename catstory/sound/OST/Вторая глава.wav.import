@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d380rsga2ktin"
+path="res://.godot/imported/Вторая глава.wav-4c06b2895b92e9cb8606f77e345c27ab.sample"
+
+[deps]
+
+source_file="res://sound/OST/Вторая глава.wav"
+dest_files=["res://.godot/imported/Вторая глава.wav-4c06b2895b92e9cb8606f77e345c27ab.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

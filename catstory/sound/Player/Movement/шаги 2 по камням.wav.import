@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjfjmwf08imy3"
+path="res://.godot/imported/шаги 2 по камням.wav-2a7a7c2651100d353e13d0d35d284cb1.sample"
+
+[deps]
+
+source_file="res://sound/Player/Movement/шаги 2 по камням.wav"
+dest_files=["res://.godot/imported/шаги 2 по камням.wav-2a7a7c2651100d353e13d0d35d284cb1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

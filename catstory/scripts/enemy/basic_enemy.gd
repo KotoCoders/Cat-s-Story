@@ -55,8 +55,9 @@ func chase_state():
 		move_and_slide()
 
 func get_damage_state():
-	#anim & cnockback
 	$AnimatedSprite2D.modulate = Color.RED
+	if !$Sound/get_damage.playing:
+		$Sound/get_damage.play()
 	await get_tree().create_timer(0.2).timeout
 	$AnimatedSprite2D.modulate = Color.WHITE
 	state = States.CHASE
@@ -64,11 +65,15 @@ func get_damage_state():
 func attack_state():
 	can_attack = false
 	$Timers/attack_cooldown_timer.start()
+	if !$Sound/take_damage.playing:
+		$Sound/take_damage.play()
 	state = States.CHASE
 
 func death_state():
 	$AnimatedSprite2D.modulate = Color.DIM_GRAY
-	await get_tree().create_timer(3).timeout
+	if !$Sound/death.playing:
+		$Sound/death.play()
+	await get_tree().create_timer(2).timeout
 	queue_free()
 
 

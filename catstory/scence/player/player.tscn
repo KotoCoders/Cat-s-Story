@@ -1,15 +1,19 @@
-[gd_scene load_steps=46 format=3 uid="uid://b5muqlbkudgng"]
+[gd_scene load_steps=50 format=3 uid="uid://b5muqlbkudgng"]
 
 [ext_resource type="Script" uid="uid://cdvlo5cvs6wls" path="res://scripts/player/player.gd" id="1_b2n7d"]
-[ext_resource type="Script" path="res://scence/player/camera_2d.gd" id="2_1rhml"]
+[ext_resource type="Script" uid="uid://dlh4ycq73auln" path="res://scence/player/camera_2d.gd" id="2_1rhml"]
 [ext_resource type="Texture2D" uid="uid://b4vv4mmktnsqp" path="res://aseprite/player.png" id="2_wblfa"]
 [ext_resource type="Texture2D" uid="uid://qdfuo3y5qcvk" path="res://assets/player/gun.png" id="3_5lrru"]
 [ext_resource type="Texture2D" uid="uid://xluuoowx7kok" path="res://icon.svg" id="4_8w8va"]
 [ext_resource type="Texture2D" uid="uid://cg4bjf8yha5gh" path="res://assets/Effect and FX Pixel All Free/Part 1/06.png" id="5_wblfa"]
 [ext_resource type="PackedScene" uid="uid://cglbyvsodpn1s" path="res://scence/UI/inventory.tscn" id="6_5aqop"]
+[ext_resource type="AudioStream" uid="uid://davqvpog4ewht" path="res://sound/Player/Movement/бег по травке.wav" id="8_614ix"]
 [ext_resource type="PackedScene" uid="uid://d32t6jxrigb0o" path="res://scence/UI/chat_box.tscn" id="8_ewase"]
+[ext_resource type="AudioStream" uid="uid://cl4cr67xlgoqf" path="res://sound/Player/player_death.mp3" id="9_li1x2"]
 [ext_resource type="PackedScene" uid="uid://dcmm56jrn5cvm" path="res://scence/UI/HP_UI/canvas_layer.tscn" id="9_qjq2c"]
+[ext_resource type="AudioStream" uid="uid://cdkuix04yyitv" path="res://sound/Player/player_get_damage.mp3" id="10_nkq6q"]
 [ext_resource type="PackedScene" uid="uid://x4vawkc0ttov" path="res://scence/UI/UI_Button/mouse_1.tscn" id="10_nxy5l"]
+[ext_resource type="AudioStream" uid="uid://cstn1pst7wrvc" path="res://sound/Player/Attack/Damage_on_air.mp3" id="11_7wwi7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_614ix"]
 atlas = ExtResource("2_wblfa")
@@ -593,6 +597,24 @@ shape = SubResource("CapsuleShape2D_7q24i")
 libraries = {
 &"": SubResource("AnimationLibrary_1rhml")
 }
+
+[node name="Sounds" type="Node2D" parent="player"]
+
+[node name="hit_air" type="AudioStreamPlayer2D" parent="player/Sounds"]
+stream = ExtResource("11_7wwi7")
+volume_db = -8.0
+bus = &"player_attack_on air"
+
+[node name="movement" type="AudioStreamPlayer2D" parent="player/Sounds"]
+stream = ExtResource("8_614ix")
+bus = &"sound"
+
+[node name="death" type="AudioStreamPlayer2D" parent="player/Sounds"]
+stream = ExtResource("9_li1x2")
+volume_db = -10.0
+
+[node name="get_damage" type="AudioStreamPlayer2D" parent="player/Sounds"]
+stream = ExtResource("10_nkq6q")
 
 [node name="inventory" parent="." instance=ExtResource("6_5aqop")]
 
