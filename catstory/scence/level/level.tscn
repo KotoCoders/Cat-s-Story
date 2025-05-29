@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://byoc4amfv5uhl" path="res://scence/mobs/plant.tscn" id="9_je1cc"]
 [ext_resource type="PackedScene" uid="uid://cbjxqxnsewbdr" path="res://scence/pickable_item/potion_of_health.tscn" id="10_ldn5a"]
 [ext_resource type="PackedScene" uid="uid://ccmpnyesed0nv" path="res://scence/pickable_item/wood.tscn" id="11_5140g"]
+[ext_resource type="PackedScene" uid="uid://bxaa5fhdji71v" path="res://scence/NPC/mentor.tscn" id="10_ldn5a"]
+[ext_resource type="PackedScene" uid="uid://b0orkdj663s0x" path="res://scence/NPC/builder.tscn" id="11_5140g"]
 
 [node name="level" type="Node2D"]
 
@@ -49,7 +51,7 @@ position = Vector2(-3572, -487)
 position = Vector2(721, 1211)
 
 [node name="pikeman2" parent="." instance=ExtResource("7_je1cc")]
-position = Vector2(-481, -60)
+position = Vector2(-1394, -63)
 
 [node name="pikeman3" parent="." instance=ExtResource("7_je1cc")]
 position = Vector2(-2117, 1338)
@@ -77,3 +79,10 @@ position = Vector2(-4992, -699)
 
 [node name="wood3" parent="." instance=ExtResource("11_5140g")]
 position = Vector2(-5602, -195)
+[node name="Mentor" parent="." instance=ExtResource("10_ldn5a")]
+position = Vector2(-4516, -282)
+scale = Vector2(4, 4)
+
+[node name="Builder" parent="." instance=ExtResource("11_5140g")]
+position = Vector2(-5500, -270)
+scale = Vector2(4, 4)

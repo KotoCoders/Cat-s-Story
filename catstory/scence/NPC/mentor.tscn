@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxaa5fhdji71v"]
+
+[ext_resource type="Script" uid="uid://dd8wevfke1f47" path="res://mentor.gd" id="1_ae0ex"]
+[ext_resource type="Texture2D" uid="uid://cr4gprwdddf2i" path="res://assets/NPC/наставник.png" id="2_jahhv"]
+[ext_resource type="PackedScene" uid="uid://b6hfem8nf3fnq" path="res://scence/UI/UI_Button/keyboard_e.tscn" id="3_jahhv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlsra"]
+atlas = ExtResource("2_jahhv")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plwsh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlsra")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jahhv"]
+radius = 95.8853
+
+[node name="Mentor" type="Node2D"]
+script = ExtResource("1_ae0ex")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_plwsh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jahhv")
+
+[node name="Keyboard_E" parent="." instance=ExtResource("3_jahhv")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Keyboard_E" method="_on_dummy_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Keyboard_E" method="_on_dummy_area_2d_body_exited"]

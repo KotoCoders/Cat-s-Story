@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CatStory"
-run/main_scene="uid://ca7svvhcpkbt8"
+run/main_scene="uid://b0pj2biha0egk"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

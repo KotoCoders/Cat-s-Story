@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0pj2biha0egk"]
+
+[ext_resource type="Script" uid="uid://bi6q7y1hgi7bv" path="res://scence/UI/menu.gd" id="1_cowph"]
+[ext_resource type="Texture2D" uid="uid://bd6rra1pq8ms2" path="res://aseprite/play.png" id="1_tu6ed"]
+[ext_resource type="Texture2D" uid="uid://dhtwtmdp7fp6t" path="res://aseprite/playblack.png" id="2_cowph"]
+[ext_resource type="Texture2D" uid="uid://bnx74xe5yxtp2" path="res://aseprite/Quit.png" id="3_ouldm"]
+[ext_resource type="Texture2D" uid="uid://bbfwp3kty36e0" path="res://aseprite/QuitBlack.png" id="4_a0b4x"]
+[ext_resource type="Texture2D" uid="uid://c5odcc21ndv1d" path="res://aseprite/Фон.png" id="6_ouldm"]
+
+[node name="Menu" type="Node2D"]
+position = Vector2(418, 187)
+script = ExtResource("1_cowph")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(226, 138)
+scale = Vector2(0.970544, 0.834635)
+texture = ExtResource("6_ouldm")
+
+[node name="TextureQuit" type="TextureButton" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0.392157)
+anchors_preset = -1
+anchor_left = -3.77551e-05
+anchor_top = 0.0132037
+anchor_right = -3.77551e-05
+anchor_bottom = 0.0119016
+offset_left = -138.017
+offset_top = 134.833
+offset_right = -92.0168
+offset_bottom = 149.833
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_ouldm")
+texture_hover = ExtResource("4_a0b4x")
+metadata/_edit_use_anchors_ = true
+
+[node name="TexturePlay" type="TextureButton" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0.392157)
+offset_left = -133.945
+offset_top = 63.5008
+offset_right = -87.9453
+offset_bottom = 77.5008
+scale = Vector2(5, 5)
+texture_normal = ExtResource("1_tu6ed")
+texture_hover = ExtResource("2_cowph")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Sprite2D/TextureQuit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Sprite2D/TexturePlay" to="." method="_on_play_pressed"]

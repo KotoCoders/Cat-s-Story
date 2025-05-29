@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0orkdj663s0x"]
+
+[ext_resource type="Script" uid="uid://lrrsp4uppw50" path="res://scence/NPC/builder.gd" id="1_age4h"]
+[ext_resource type="Texture2D" uid="uid://bs02nt4a3lmwg" path="res://aseprite/Builder.png" id="1_ttfwf"]
+[ext_resource type="PackedScene" uid="uid://b6hfem8nf3fnq" path="res://scence/UI/UI_Button/keyboard_e.tscn" id="2_sogc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sogc4"]
+radius = 71.007
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_age4h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ttfwf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Builder" type="Node2D"]
+position = Vector2(2, 2)
+script = ExtResource("1_age4h")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_sogc4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_age4h")
+
+[node name="Keyboard_E" parent="." instance=ExtResource("2_sogc4")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Keyboard_E" method="_on_dummy_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Keyboard_E" method="_on_dummy_area_2d_body_exited"]

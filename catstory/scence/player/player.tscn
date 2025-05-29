@@ -1,7 +1,7 @@
 [gd_scene load_steps=50 format=3 uid="uid://b5muqlbkudgng"]
 
 [ext_resource type="Script" uid="uid://cdvlo5cvs6wls" path="res://scripts/player/player.gd" id="1_b2n7d"]
-[ext_resource type="Script" uid="uid://dlh4ycq73auln" path="res://scence/player/camera_2d.gd" id="2_1rhml"]
+[ext_resource type="Script" path="res://scence/player/camera_2d.gd" id="2_1rhml"]
 [ext_resource type="Texture2D" uid="uid://b4vv4mmktnsqp" path="res://aseprite/player.png" id="2_wblfa"]
 [ext_resource type="Texture2D" uid="uid://qdfuo3y5qcvk" path="res://assets/player/gun.png" id="3_5lrru"]
 [ext_resource type="Texture2D" uid="uid://xluuoowx7kok" path="res://icon.svg" id="4_8w8va"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cl4cr67xlgoqf" path="res://sound/Player/player_death.mp3" id="9_li1x2"]
 [ext_resource type="PackedScene" uid="uid://dcmm56jrn5cvm" path="res://scence/UI/HP_UI/canvas_layer.tscn" id="9_qjq2c"]
 [ext_resource type="AudioStream" uid="uid://cdkuix04yyitv" path="res://sound/Player/player_get_damage.mp3" id="10_nkq6q"]
+[ext_resource type="PackedScene" uid="uid://dcmm56jrn5cvm" path="res://scence/UI/HP_UI/HP.tscn" id="9_qjq2c"]
 [ext_resource type="PackedScene" uid="uid://x4vawkc0ttov" path="res://scence/UI/UI_Button/mouse_1.tscn" id="10_nxy5l"]
 [ext_resource type="AudioStream" uid="uid://cstn1pst7wrvc" path="res://sound/Player/Attack/Damage_on_air.mp3" id="11_7wwi7"]
 

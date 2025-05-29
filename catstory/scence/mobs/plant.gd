@@ -8,4 +8,3 @@ func attack_state():
 	$Bullet_Patern.circle_12_2()
 
 	super.attack_state()
-	
