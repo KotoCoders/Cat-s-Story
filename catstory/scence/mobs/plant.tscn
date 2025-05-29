@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://byoc4amfv5uhl"]
 
 [ext_resource type="PackedScene" uid="uid://ctqpeu4limjb1" path="res://scence/mobs/basic_enemy.tscn" id="1_qt4s0"]
-[ext_resource type="Script" uid="uid://lutpvgjblrrw" path="res://basic_enemy.gd" id="2_y7y3q"]
+[ext_resource type="Script" uid="uid://db21tjhmh0cjq" path="res://scence/mobs/plant.gd" id="2_qt4s0"]
 [ext_resource type="Texture2D" uid="uid://b7mb6mnlckpor" path="res://aseprite/plant.png" id="3_g7l4j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18vgx"]
@@ -86,7 +86,7 @@ animations = [{
 radius = 63.1981
 
 [node name="plant" instance=ExtResource("1_qt4s0")]
-script = ExtResource("2_y7y3q")
+script = ExtResource("2_qt4s0")
 can_move = false
 
 [node name="AnimatedSprite2D" parent="." index="1"]

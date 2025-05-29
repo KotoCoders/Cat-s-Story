@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ca7svvhcpkbt8"]
+[gd_scene load_steps=12 format=3 uid="uid://ca7svvhcpkbt8"]
 
 [ext_resource type="PackedScene" uid="uid://dd8ch3dsedabv" path="res://scence/tilemaps/tilemap.tscn" id="1_brym3"]
 [ext_resource type="PackedScene" uid="uid://b5muqlbkudgng" path="res://scence/player/player.tscn" id="2_fh1f2"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cp68rqytfcqw7" path="res://test/4_bullet.tscn" id="7_ylwex"]
 [ext_resource type="PackedScene" uid="uid://duqbiprgs6g6a" path="res://scence/mobs/big_slime.tscn" id="8_ylwex"]
 [ext_resource type="PackedScene" uid="uid://byoc4amfv5uhl" path="res://scence/mobs/plant.tscn" id="9_je1cc"]
+[ext_resource type="PackedScene" uid="uid://bxaa5fhdji71v" path="res://scence/NPC/mentor.tscn" id="10_ldn5a"]
+[ext_resource type="PackedScene" uid="uid://b0orkdj663s0x" path="res://scence/NPC/builder.tscn" id="11_5140g"]
 
 [node name="level" type="Node2D"]
 
@@ -23,7 +25,7 @@ position = Vector2(-1494, -441)
 position = Vector2(-1771, -327)
 
 [node name="player" parent="." instance=ExtResource("2_fh1f2")]
-position = Vector2(73, -377)
+position = Vector2(-5027, -270)
 
 [node name="pickable_item" parent="." instance=ExtResource("5_63gtg")]
 position = Vector2(1439, -505)
@@ -47,7 +49,7 @@ position = Vector2(-3572, -487)
 position = Vector2(721, 1211)
 
 [node name="pikeman2" parent="." instance=ExtResource("7_je1cc")]
-position = Vector2(-503, -198)
+position = Vector2(-1394, -63)
 
 [node name="pikeman3" parent="." instance=ExtResource("7_je1cc")]
 position = Vector2(-2117, 1338)
@@ -59,4 +61,15 @@ position = Vector2(-3132, 879)
 position = Vector2(-5149, 401)
 
 [node name="big_slime2" parent="." instance=ExtResource("8_ylwex")]
-position = Vector2(316, -36)
+position = Vector2(881, 121)
+
+[node name="pickable_item4" parent="." instance=ExtResource("5_63gtg")]
+position = Vector2(-4489, 3)
+
+[node name="Mentor" parent="." instance=ExtResource("10_ldn5a")]
+position = Vector2(-4516, -282)
+scale = Vector2(4, 4)
+
+[node name="Builder" parent="." instance=ExtResource("11_5140g")]
+position = Vector2(-5500, -270)
+scale = Vector2(4, 4)

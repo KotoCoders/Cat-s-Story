@@ -136,7 +136,7 @@ func attack():
 
 func damage_aplication(body):
 	if body.name != "player":
-  		if body.has_method("signal_get_damage"):
+		if body.has_method("signal_get_damage"):
 			body.signal_get_damage(damage_claws, "claws", self.global_position)
 
 
@@ -163,6 +163,7 @@ func get_damage(damage):
 		$AnimatedSprite2D.modulate = Color.ORANGE_RED
 		await get_tree().create_timer(0.7).timeout
 		$AnimatedSprite2D.modulate = Color.WHITE
+		$"../CanvasLayer".hp_changed(hp)
 		can_get_damage = true
 
 func _on_poof_area_body_entered(body):
@@ -194,4 +195,3 @@ func _on_poof_timer_duration_timeout() -> void:
 	#bullet.rotation = $Gun.rotation
 	#bullet.linear_velocity = Vector2(bullet_speed,0).rotated($Gun.rotation)
 	#get_tree().get_root().add_child(bullet) 
-

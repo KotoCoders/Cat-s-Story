@@ -27,17 +27,18 @@ scale = Vector2(1.98667, 1.52995)
 sprite_frames = SubResource("SpriteFrames_maj08")
 
 [node name="TextLabe1" type="Label" parent="AnimatedSprite2D"]
-offset_left = -132.886
-offset_top = -9.80424
-offset_right = 194.114
-offset_bottom = 66.1958
+offset_left = -151.0
+offset_top = -22.0
+offset_right = 203.0
+offset_bottom = 70.0
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ContinueButton" type="Button" parent="AnimatedSprite2D/TextLabe1"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 277.0
-offset_top = 38.0
-offset_right = 340.0
-offset_bottom = 81.0
+offset_left = -182.0
+offset_top = -305.0
+offset_right = 457.0
+offset_bottom = 120.0
 text = "Далее"
