@@ -54,7 +54,6 @@ shape = SubResource("CircleShape2D_o3prf")
 
 [node name="death" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("3_kcgs4")
-bus = &"sound"
 
 [node name="get_damage" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("2_o3prf")

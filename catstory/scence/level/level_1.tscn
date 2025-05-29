@@ -81,7 +81,6 @@ position = Vector2(-52, 86)
 stream = ExtResource("8_576tw")
 volume_db = 8.0
 autoplay = true
-bus = &"music"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="Node2D"]
 stream = ExtResource("9_8yupj")

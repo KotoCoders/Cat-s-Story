@@ -603,11 +603,9 @@ libraries = {
 [node name="hit_air" type="AudioStreamPlayer2D" parent="player/Sounds"]
 stream = ExtResource("11_7wwi7")
 volume_db = -8.0
-bus = &"player_attack_on air"
 
 [node name="movement" type="AudioStreamPlayer2D" parent="player/Sounds"]
 stream = ExtResource("8_614ix")
-bus = &"sound"
 
 [node name="death" type="AudioStreamPlayer2D" parent="player/Sounds"]
 stream = ExtResource("9_li1x2")

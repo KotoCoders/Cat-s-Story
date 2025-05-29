@@ -113,3 +113,6 @@ position = Vector2(52, -66)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
 shape = SubResource("CapsuleShape2D_3jsxr")
+
+[node name="death" parent="Sound" index="0"]
+bus = &"Master"
