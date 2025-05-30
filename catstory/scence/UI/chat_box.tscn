@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d32t6jxrigb0o"]
 
-[ext_resource type="Script" uid="uid://vh5ag5j1qypb" path="res://scence/UI/chat_box.gd" id="1_yfson"]
+[ext_resource type="Script" uid="uid://vh5ag5j1qypb" path="res://scripts/UI/chat_box.gd" id="1_yfson"]
 [ext_resource type="Texture2D" uid="uid://c8q7attkf7nrc" path="res://assets/UI/pixel_art_large (3).png" id="2_jfll1"]
 [ext_resource type="AudioStream" uid="uid://bai4kaedn2ptk" path="res://sound/Player/murlykane-kotenka.mp3" id="3_15ck4"]
 

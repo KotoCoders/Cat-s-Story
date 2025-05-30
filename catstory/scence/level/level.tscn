@@ -64,6 +64,9 @@ position = Vector2(-5149, 401)
 [node name="big_slime2" parent="." instance=ExtResource("8_ylwex")]
 position = Vector2(881, 121)
 
+[node name="pickable_item4" parent="." instance=ExtResource("5_63gtg")]
+position = Vector2(-4489, 3)
+
 [node name="Mentor" parent="." instance=ExtResource("10_ldn5a")]
 position = Vector2(-4982, 299)
 scale = Vector2(4, 4)

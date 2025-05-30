@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://2hyy1wtyjjn6"]
+
+[ext_resource type="Script" uid="uid://baly7yum1qg4l" path="res://scence/NPC/grandfather.gd" id="1_cmolh"]
+[ext_resource type="PackedScene" uid="uid://bkd04wrdbxyve" path="res://scence/NPC/basic_npc.tscn" id="1_md3y3"]
+[ext_resource type="Texture2D" uid="uid://cmmeqmop4yd7k" path="res://assets/NPC/Ded.png" id="2_cmolh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_suleg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cmolh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Grandfather" type="Node2D"]
+script = ExtResource("1_cmolh")
+
+[node name="Basic_Npc" parent="." instance=ExtResource("1_md3y3")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_suleg")

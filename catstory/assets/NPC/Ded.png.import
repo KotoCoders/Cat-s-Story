@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://cedd80p8qtv7p"
-=======
-uid="uid://7mvilvi33yoh"
->>>>>>> origin/UI_project
-path="res://.godot/imported/death.png-54ec92b4b9a991419c48f5f5c6ce2110.ctex"
+uid="uid://cmmeqmop4yd7k"
+path="res://.godot/imported/Ded.png-3bf164408087b77bcf48e7fdad2a968f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aseprite/death.png"
-dest_files=["res://.godot/imported/death.png-54ec92b4b9a991419c48f5f5c6ce2110.ctex"]
+source_file="res://assets/NPC/Ded.png"
+dest_files=["res://.godot/imported/Ded.png-3bf164408087b77bcf48e7fdad2a968f.ctex"]
 
 [params]
 

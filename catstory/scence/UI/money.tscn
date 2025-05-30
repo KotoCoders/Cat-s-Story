@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7lwsmgfgbej8"]
 
 [ext_resource type="Texture2D" uid="uid://bdjt12534c75c" path="res://assets/items/gold-coins-turn-around-animation-set.png" id="1_aq8c1"]
-[ext_resource type="Script" uid="uid://bj6ns1bjufg75" path="res://scence/UI/money.gd" id="1_o2urj"]
+[ext_resource type="Script" uid="uid://bj6ns1bjufg75" path="res://scripts/UI/money.gd" id="1_o2urj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a4nyr"]
 

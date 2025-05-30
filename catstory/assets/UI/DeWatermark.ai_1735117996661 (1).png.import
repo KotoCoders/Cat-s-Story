@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://cedd80p8qtv7p"
-=======
-uid="uid://7mvilvi33yoh"
->>>>>>> origin/UI_project
-path="res://.godot/imported/death.png-54ec92b4b9a991419c48f5f5c6ce2110.ctex"
+uid="uid://b0l0au6bwphmu"
+path="res://.godot/imported/DeWatermark.ai_1735117996661 (1).png-2a87b54475597fefdc63b1c5c8c51fa9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aseprite/death.png"
-dest_files=["res://.godot/imported/death.png-54ec92b4b9a991419c48f5f5c6ce2110.ctex"]
+source_file="res://assets/UI/DeWatermark.ai_1735117996661 (1).png"
+dest_files=["res://.godot/imported/DeWatermark.ai_1735117996661 (1).png-2a87b54475597fefdc63b1c5c8c51fa9.ctex"]
 
 [params]
 

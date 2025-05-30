@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://cedd80p8qtv7p"
-=======
-uid="uid://7mvilvi33yoh"
->>>>>>> origin/UI_project
-path="res://.godot/imported/death.png-54ec92b4b9a991419c48f5f5c6ce2110.ctex"
+uid="uid://bs02nt4a3lmwg"
+path="res://.godot/imported/Builder.png-5e3df5dc654a53168abb0fd32306d41a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aseprite/death.png"
-dest_files=["res://.godot/imported/death.png-54ec92b4b9a991419c48f5f5c6ce2110.ctex"]
+source_file="res://assets/NPC/Builder.png"
+dest_files=["res://.godot/imported/Builder.png-5e3df5dc654a53168abb0fd32306d41a.ctex"]
 
 [params]
 

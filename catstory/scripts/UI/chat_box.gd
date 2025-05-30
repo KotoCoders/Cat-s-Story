@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var text_label = $AnimatedSprite2D/TextLabe1
 @onready var continue_button = $AnimatedSprite2D/TextLabe1/ContinueButton
 
+signal dialog_finished
+
 var current_line = 0
 var dialog_lines = []
 var started_chat = false
