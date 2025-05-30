@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ly85ydogoee3"]
+
+[ext_resource type="Texture2D" uid="uid://7mvilvi33yoh" path="res://aseprite/death.png" id="1_okts5"]
+[ext_resource type="Script" uid="uid://b54w7dikrr3la" path="res://scence/level/death.gd" id="2_o0ijn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o0ijn"]
+font_size = 48
+font_color = Color(0.52, 0, 0, 1)
+
+[node name="death" type="Sprite2D"]
+position = Vector2(733, 281)
+texture = ExtResource("1_okts5")
+script = ExtResource("2_o0ijn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -306.0
+offset_top = -33.0
+offset_right = 106.0
+offset_bottom = 93.0
+text = "Вы погибли"
+label_settings = SubResource("LabelSettings_o0ijn")
+horizontal_alignment = 1
+vertical_alignment = 1

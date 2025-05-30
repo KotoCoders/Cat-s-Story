@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs02nt4a3lmwg"
-path="res://.godot/imported/Builder.png-aee7b04901d03a5208af76eb5e18eb59.ctex"
+uid="uid://mp5sme1n7bec"
+path="res://.godot/imported/SDFb.png-cdbec427c31052d3e9a7170d4945d244.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aseprite/Builder.png"
-dest_files=["res://.godot/imported/Builder.png-aee7b04901d03a5208af76eb5e18eb59.ctex"]
+source_file="res://assets/UI/SDFb.png"
+dest_files=["res://.godot/imported/SDFb.png-cdbec427c31052d3e9a7170d4945d244.ctex"]
 
 [params]
 

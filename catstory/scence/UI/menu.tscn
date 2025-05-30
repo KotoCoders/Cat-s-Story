@@ -1,47 +1,55 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0pj2biha0egk"]
+[gd_scene load_steps=9 format=3 uid="uid://b0pj2biha0egk"]
 
-[ext_resource type="Script" uid="uid://bi6q7y1hgi7bv" path="res://scence/UI/menu.gd" id="1_cowph"]
+[ext_resource type="Script" uid="uid://bi6q7y1hgi7bv" path="res://scripts/UI/menu.gd" id="1_cowph"]
 [ext_resource type="Texture2D" uid="uid://bd6rra1pq8ms2" path="res://aseprite/play.png" id="1_tu6ed"]
+[ext_resource type="Texture2D" uid="uid://d4kkumi35iv4e" path="res://assets/UI/castle.png" id="2_a0b4x"]
 [ext_resource type="Texture2D" uid="uid://dhtwtmdp7fp6t" path="res://aseprite/playblack.png" id="2_cowph"]
 [ext_resource type="Texture2D" uid="uid://bnx74xe5yxtp2" path="res://aseprite/Quit.png" id="3_ouldm"]
+[ext_resource type="Script" uid="uid://cncf0e3avo22d" path="res://scripts/UI/sprite_2d.gd" id="3_w54nn"]
 [ext_resource type="Texture2D" uid="uid://bbfwp3kty36e0" path="res://aseprite/QuitBlack.png" id="4_a0b4x"]
-[ext_resource type="Texture2D" uid="uid://c5odcc21ndv1d" path="res://aseprite/Фон.png" id="6_ouldm"]
+[ext_resource type="Texture2D" uid="uid://4q5edha7g6ca" path="res://assets/UI/DeWatermark.ai_1735120187190 (2).png" id="4_ry2mf"]
 
 [node name="Menu" type="Node2D"]
 position = Vector2(418, 187)
 script = ExtResource("1_cowph")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(226, 138)
-scale = Vector2(0.970544, 0.834635)
-texture = ExtResource("6_ouldm")
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(222.582, 141.329)
+scale = Vector2(0.973689, 0.849815)
+texture = ExtResource("4_ry2mf")
 
-[node name="TextureQuit" type="TextureButton" parent="Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(3.51044, -54.5166)
+scale = Vector2(1.2, 1.182)
+texture = ExtResource("2_a0b4x")
+script = ExtResource("3_w54nn")
+
+[node name="TextureQuit" type="TextureButton" parent="Sprite2D2"]
 modulate = Color(1, 1, 1, 0.392157)
 anchors_preset = -1
 anchor_left = -3.77551e-05
-anchor_top = 0.0132037
+anchor_top = 0.0119016
 anchor_right = -3.77551e-05
 anchor_bottom = 0.0119016
-offset_left = -138.017
-offset_top = 134.833
-offset_right = -92.0168
-offset_bottom = 149.833
+offset_left = -145.95
+offset_top = 103.439
+offset_right = -99.9498
+offset_bottom = 118.439
 scale = Vector2(5, 5)
 texture_normal = ExtResource("3_ouldm")
 texture_hover = ExtResource("4_a0b4x")
 metadata/_edit_use_anchors_ = true
 
-[node name="TexturePlay" type="TextureButton" parent="Sprite2D"]
+[node name="TexturePlay" type="TextureButton" parent="Sprite2D2"]
 modulate = Color(1, 1, 1, 0.392157)
-offset_left = -133.945
-offset_top = 63.5008
-offset_right = -87.9453
-offset_bottom = 77.5008
+offset_left = -146.0
+offset_top = 9.027
+offset_right = -100.0
+offset_bottom = 23.027
 scale = Vector2(5, 5)
 texture_normal = ExtResource("1_tu6ed")
 texture_hover = ExtResource("2_cowph")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Sprite2D/TextureQuit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Sprite2D/TexturePlay" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Sprite2D2/TextureQuit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Sprite2D2/TexturePlay" to="." method="_on_play_pressed"]

@@ -40,12 +40,15 @@ enum{
 }
 func _ready():
 	$"../inventory".visible = false
+	$"../inventory/Animatedinventory/Sprite2D".visible = false
+	$"../inventory/Animatedinventory/Label".visible = false
 	#dialog_ui = preload("res://scence/chat_box.tscn").instantiate()
 	#get_tree().root.add_child(dialog_ui)
 	#dialog_ui.hide()
 	
 var state = MOVE
-
+	
+	
 func _physics_process(_delta):
 
 	match state:
@@ -87,9 +90,9 @@ func MOVE_STATE():
 		if !$Sounds/movement.playing:
 			$Sounds/movement.play()
 	
-
 	if Input.is_action_just_pressed("action"):
-		attack()
+		if not $"../chat_box".is_visible():
+			attack()
 	if Input.is_action_just_pressed("rcm") and can_poof and not($AnimationPlayer.is_playing()):
 		state = POOF
 	if Input.is_action_just_pressed("dash") and can_dash and direction != Vector2.ZERO:
@@ -135,8 +138,8 @@ func DEATH_STATE():
 	print("ты вмэр")
 	if !$Sounds/death.playing:
 		$Sounds/death.play()
-	await get_tree().create_timer(1).timeout
-	
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scence/level/death.tscn")
 
 
 func pick_up_item(item_name, amount):
@@ -163,8 +166,11 @@ func damage_aplication(body):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("chat") and can_talk_to_npc and current_npc and not $"../chat_box".started_chat:
-		$"../chat_box".visible = not $"../chat_box".visible
-		$"../chat_box".start_dialog(current_npc.dialog_lines)
+		if current_npc.has_method("get_dialog"):
+			$"../chat_box".start_dialog(current_npc.get_dialog())
+		else:
+			$"../chat_box".visible = not $"../chat_box".visible
+			$"../chat_box".start_dialog(current_npc.dialog_lines)
 	if event.is_action_pressed("Open_Inventory"):  
 		$"../inventory".visible = not $"../inventory".visible  
 		if ($"../inventory".visible):
@@ -173,6 +179,10 @@ func _input(event: InputEvent) -> void:
 		else:
 			$Camera2D.set_target_offset([0, 0])
 			$Camera2D.zoom_to($Camera2D.standart_zoom, 0.5)
+		if "wood" in inventory and inventory["wood"] > 0:
+			$"../inventory/Animatedinventory/Sprite2D".visible = true
+			$"../inventory/Animatedinventory/Label".visible = true
+			$"../inventory/Animatedinventory/Label".text = str(inventory["wood"])
 
 
 

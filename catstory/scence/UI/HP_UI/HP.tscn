@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dcmm56jrn5cvm"]
 
-[ext_resource type="Script" uid="uid://8673i0ux15wd" path="res://scence/UI/HP_UI/hp.gd" id="1_vsmrl"]
+[ext_resource type="Script" uid="uid://8673i0ux15wd" path="res://scripts/UI/hp.gd" id="1_vsmrl"]
 [ext_resource type="Texture2D" uid="uid://ch021d3jwdqit" path="res://assets/UI/HP/0хп (2).png" id="2_wurbn"]
 [ext_resource type="Texture2D" uid="uid://bto6enaofm6wg" path="res://assets/UI/HP/13332.png" id="3_u3m51"]
 [ext_resource type="Texture2D" uid="uid://de71d7yauusur" path="res://assets/UI/HP/1332.png" id="4_yqcxt"]

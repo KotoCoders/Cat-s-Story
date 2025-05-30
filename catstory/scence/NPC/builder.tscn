@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b0orkdj663s0x"]
 
 [ext_resource type="Script" uid="uid://lrrsp4uppw50" path="res://scence/NPC/builder.gd" id="1_age4h"]
-[ext_resource type="Texture2D" uid="uid://bs02nt4a3lmwg" path="res://aseprite/Builder.png" id="1_ttfwf"]
+[ext_resource type="Texture2D" uid="uid://bs02nt4a3lmwg" path="res://assets/NPC/Builder.png" id="1_ttfwf"]
 [ext_resource type="PackedScene" uid="uid://b6hfem8nf3fnq" path="res://scence/UI/UI_Button/keyboard_e.tscn" id="2_sogc4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sogc4"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cglbyvsodpn1s"]
+[gd_scene load_steps=6 format=3 uid="uid://cglbyvsodpn1s"]
 
 [ext_resource type="Texture2D" uid="uid://bvbhu8clv5upm" path="res://assets/UI/pixel_art_large (4).png" id="1_71yj8"]
+[ext_resource type="Texture2D" uid="uid://s4pkh5ccdcne" path="res://aseprite/wood.png" id="2_36361"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36361"]
 atlas = ExtResource("1_71yj8")
@@ -17,6 +18,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_36361"]
+font_size = 48
+shadow_size = 3
+
 [node name="inventory" type="CanvasLayer"]
 
 [node name="Animatedinventory" type="AnimatedSprite2D" parent="."]
@@ -24,3 +29,17 @@ position = Vector2(455.155, 342)
 scale = Vector2(1.47834, 1.26364)
 sprite_frames = SubResource("SpriteFrames_g7h80")
 animation = &"inventory"
+
+[node name="Sprite2D" type="Sprite2D" parent="Animatedinventory"]
+position = Vector2(-155.008, -95.7551)
+scale = Vector2(7.0989, 6.32125)
+texture = ExtResource("2_36361")
+
+[node name="Label" type="Label" parent="Animatedinventory"]
+offset_left = -170.566
+offset_top = -44.3164
+offset_right = -43.5663
+offset_bottom = 22.6836
+label_settings = SubResource("LabelSettings_36361")
+horizontal_alignment = 1
+vertical_alignment = 1

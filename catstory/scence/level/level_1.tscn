@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cprynkwem8jdd"]
+[gd_scene load_steps=14 format=3 uid="uid://cprynkwem8jdd"]
 
 [ext_resource type="PackedScene" uid="uid://vgy2ifcyvk40" path="res://scence/tilemaps/tile_map_level_1.tscn" id="1_2ppyg"]
 [ext_resource type="Script" uid="uid://p8g2t0xe5c52" path="res://scripts/level/level_1.gd" id="1_8yupj"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://ccmpnyesed0nv" path="res://scence/pickable_item/wood.tscn" id="7_kyh1d"]
 [ext_resource type="AudioStream" uid="uid://dmkryv5cyjl1n" path="res://sound/OST/Подводка к эпичной теме.wav" id="8_576tw"]
 [ext_resource type="AudioStream" uid="uid://cupet0gsd00ec" path="res://sound/OST/Эпичная тема.wav" id="9_8yupj"]
+[ext_resource type="PackedScene" uid="uid://b0orkdj663s0x" path="res://scence/NPC/builder.tscn" id="11_j0355"]
+[ext_resource type="PackedScene" uid="uid://bxaa5fhdji71v" path="res://scence/NPC/mentor.tscn" id="12_p1b1q"]
+[ext_resource type="PackedScene" uid="uid://2hyy1wtyjjn6" path="res://scence/NPC/grandfather.tscn" id="13_p1b1q"]
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_8yupj")
@@ -84,6 +87,20 @@ autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="Node2D"]
 stream = ExtResource("9_8yupj")
+
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="Builder" parent="NPC" instance=ExtResource("11_j0355")]
+position = Vector2(-415, 1754)
+scale = Vector2(4, 4)
+
+[node name="Mentor" parent="NPC" instance=ExtResource("12_p1b1q")]
+position = Vector2(194, -33)
+scale = Vector2(4, 4)
+
+[node name="Grandfather" parent="NPC" instance=ExtResource("13_p1b1q")]
+position = Vector2(-370, 825)
+scale = Vector2(0.7, 0.7)
 
 [connection signal="finished" from="Node2D/AudioStreamPlayer1" to="." method="_on_audio_stream_player_1_finished"]
 [connection signal="finished" from="Node2D/AudioStreamPlayer2" to="." method="_on_audio_stream_player_2_finished"]

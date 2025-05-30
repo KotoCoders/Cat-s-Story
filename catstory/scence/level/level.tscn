@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cp68rqytfcqw7" path="res://test/4_bullet.tscn" id="7_ylwex"]
 [ext_resource type="PackedScene" uid="uid://duqbiprgs6g6a" path="res://scence/mobs/big_slime.tscn" id="8_ylwex"]
 [ext_resource type="PackedScene" uid="uid://byoc4amfv5uhl" path="res://scence/mobs/plant.tscn" id="9_je1cc"]
-[ext_resource type="PackedScene" uid="uid://cbjxqxnsewbdr" path="res://scence/pickable_item/potion_of_health.tscn" id="10_ldn5a"]
-[ext_resource type="PackedScene" uid="uid://ccmpnyesed0nv" path="res://scence/pickable_item/wood.tscn" id="11_5140g"]
 [ext_resource type="PackedScene" uid="uid://bxaa5fhdji71v" path="res://scence/NPC/mentor.tscn" id="10_ldn5a"]
 [ext_resource type="PackedScene" uid="uid://b0orkdj663s0x" path="res://scence/NPC/builder.tscn" id="11_5140g"]
 
@@ -68,17 +66,6 @@ position = Vector2(881, 121)
 [node name="pickable_item4" parent="." instance=ExtResource("5_63gtg")]
 position = Vector2(-4489, 3)
 
-[node name="potion_of_health" parent="." instance=ExtResource("10_ldn5a")]
-position = Vector2(-4839, -236)
-
-[node name="wood" parent="." instance=ExtResource("11_5140g")]
-position = Vector2(-5624, -578)
-
-[node name="wood2" parent="." instance=ExtResource("11_5140g")]
-position = Vector2(-4992, -699)
-
-[node name="wood3" parent="." instance=ExtResource("11_5140g")]
-position = Vector2(-5602, -195)
 [node name="Mentor" parent="." instance=ExtResource("10_ldn5a")]
 position = Vector2(-4516, -282)
 scale = Vector2(4, 4)
