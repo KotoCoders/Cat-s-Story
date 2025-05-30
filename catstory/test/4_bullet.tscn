@@ -14,8 +14,10 @@ script = ExtResource("1_77330")
 [node name="bullet" type="Area2D" parent="."]
 position = Vector2(50, 0)
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("2_yxi48")
+speed = null
+direction = null
 
 [node name="Sprite2D" type="Sprite2D" parent="bullet"]
 scale = Vector2(8, 8)
@@ -27,8 +29,10 @@ shape = SubResource("RectangleShape2D_74487")
 [node name="bullet2" type="Area2D" parent="."]
 position = Vector2(-50, 0)
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("2_yxi48")
+speed = null
+direction = null
 
 [node name="Sprite2D" type="Sprite2D" parent="bullet2"]
 scale = Vector2(8, 8)
@@ -40,8 +44,10 @@ shape = SubResource("RectangleShape2D_74487")
 [node name="bullet3" type="Area2D" parent="."]
 position = Vector2(0, 50)
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("2_yxi48")
+speed = null
+direction = null
 
 [node name="Sprite2D" type="Sprite2D" parent="bullet3"]
 scale = Vector2(8, 8)
@@ -53,8 +59,10 @@ shape = SubResource("RectangleShape2D_74487")
 [node name="bullet4" type="Area2D" parent="."]
 position = Vector2(0, -50)
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("2_yxi48")
+speed = null
+direction = null
 
 [node name="Sprite2D" type="Sprite2D" parent="bullet4"]
 scale = Vector2(8, 8)

@@ -49,7 +49,6 @@ func chase_state():
 	if can_move:
 		if is_chased == false:
 			is_chased = true
-			print("is chased = true")
 		_choose_new_direction()
 		velocity = dir * speed_chase
 		move_and_slide()
@@ -82,7 +81,6 @@ func death_state():
 
 func signal_get_damage(damage: int, type, player_pos):
 	#после можно будет сделать с типами урона
-	print("нанесён урон")
 	match(type):
 		"claws":
 			hp -= damage
@@ -98,7 +96,6 @@ func cnockback(player_pos):
 	print(self.global_position, "   ", player_pos)
 	dir_cnockback = Vector2(self.global_position - player_pos)
 	dir_cnockback = dir_cnockback.normalized()
-	print("cnockabck ", dir_cnockback)
 	velocity = dir_cnockback * 6500
 	move_and_slide()
 
@@ -114,7 +111,6 @@ func _choose_new_direction():
 
 
 func body_entered_in_area(body):
-	print("body_entered_in_area")
 	if body.name == "player":
 		
 		player = body
@@ -122,10 +118,7 @@ func body_entered_in_area(body):
 		state = States.CHASE
 
 func body_exited_from_area(body):
-	print("body_exited_from_area")
 	if body.name == "player":
-		
-		print("is_chased=false")
 		is_chased = false
 		state = States.IDLE
 

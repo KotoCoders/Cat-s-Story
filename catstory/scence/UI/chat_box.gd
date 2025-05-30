@@ -14,6 +14,7 @@ func _ready():
 
 func start_dialog(lines):
 	started_chat = true
+	$AnimatedSprite2D/AudioStreamPlayer2D.play()
 	dialog_lines = lines
 	current_line = 0
 	show()
@@ -28,4 +29,7 @@ func _on_ContinueButton_pressed():
 	if current_line >= dialog_lines.size():
 		started_chat = false
 		visible = false
+		$AnimatedSprite2D/AudioStreamPlayer2D.stop()
+	else:
+		$AnimatedSprite2D/AudioStreamPlayer2D.play()
 	_display_line()

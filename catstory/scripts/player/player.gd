@@ -47,6 +47,14 @@ func _ready():
 var state = MOVE
 
 func _physics_process(_delta):
+	if can_poof :
+		$cd_poof.play("cd_1")
+	else :
+		$cd_poof.play("cd")
+	if can_dash :
+		$cd_dash.play("cd_1")
+	else :
+		$cd_dash.play("cd")
 
 	match state:
 		MOVE:
@@ -109,7 +117,6 @@ func POOF_STATE():
 	if can_poof == true:
 		if $Poof/PoofTimerDuration.is_stopped():
 			$Poof/PoofTimerDuration.start()
-			print("$Poof/PoofTimerDuration.start()")
 		$AnimationPlayer.play("poof")
 		can_get_damage = false
 		if Input.is_action_just_released("rcm"):
@@ -132,7 +139,6 @@ func DASH_STATE():
 	state = MOVE
 
 func DEATH_STATE():
-	print("ты вмэр")
 	if !$Sounds/death.playing:
 		$Sounds/death.play()
 	await get_tree().create_timer(1).timeout
@@ -144,6 +150,7 @@ func pick_up_item(item_name, amount):
 		inventory[item_name] += amount
 	else:
 		inventory[item_name] = amount
+	$Sounds/pick_up.play()
 	print("Подобран предмет: ", item_name, " (теперь: ", inventory[item_name], ")")
 
 func attack():
@@ -181,7 +188,6 @@ func get_damage(damage):
 		hp -= damage
 		if hp <=0:
 			state = DEATH
-		print("получен урон, сейчас: ", hp)
 		can_get_damage = false
 		$Sounds/get_damage.play()
 		$AnimatedSprite2D.modulate = Color.ORANGE_RED
@@ -204,13 +210,14 @@ func _on_poof_area_body_entered(body):
 
 func _on_poof_timer_timeout():
 	can_poof = true
+	#$Sounds/cd.play()
 
 func _on_dash_cooldawn_timeout() -> void:
 	can_dash = true
+	#$Sounds/cd.play()
 
 func _on_poof_timer_duration_timeout() -> void:
 	
-	print("_on_poof_timer_duration_timeout")
 	can_get_damage = true
 	$Poof/PoofTimerDuration.stop()
 	$AnimationPlayer.stop()

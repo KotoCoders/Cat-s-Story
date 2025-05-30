@@ -29,6 +29,7 @@ offset_bottom = -11.0
 horizontal_alignment = 1
 
 [node name="dummy_Area2D" type="Area2D" parent="."]
+visible = false
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dummy_Area2D"]

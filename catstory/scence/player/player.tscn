@@ -1,7 +1,7 @@
-[gd_scene load_steps=50 format=3 uid="uid://b5muqlbkudgng"]
+[gd_scene load_steps=62 format=3 uid="uid://b5muqlbkudgng"]
 
 [ext_resource type="Script" uid="uid://cdvlo5cvs6wls" path="res://scripts/player/player.gd" id="1_b2n7d"]
-[ext_resource type="Script" path="res://scence/player/camera_2d.gd" id="2_1rhml"]
+[ext_resource type="Script" uid="uid://dlh4ycq73auln" path="res://scence/player/camera_2d.gd" id="2_1rhml"]
 [ext_resource type="Texture2D" uid="uid://b4vv4mmktnsqp" path="res://aseprite/player.png" id="2_wblfa"]
 [ext_resource type="Texture2D" uid="uid://qdfuo3y5qcvk" path="res://assets/player/gun.png" id="3_5lrru"]
 [ext_resource type="Texture2D" uid="uid://xluuoowx7kok" path="res://icon.svg" id="4_8w8va"]
@@ -10,11 +10,16 @@
 [ext_resource type="AudioStream" uid="uid://davqvpog4ewht" path="res://sound/Player/Movement/бег по травке.wav" id="8_614ix"]
 [ext_resource type="PackedScene" uid="uid://d32t6jxrigb0o" path="res://scence/UI/chat_box.tscn" id="8_ewase"]
 [ext_resource type="AudioStream" uid="uid://cl4cr67xlgoqf" path="res://sound/Player/player_death.mp3" id="9_li1x2"]
-[ext_resource type="PackedScene" uid="uid://dcmm56jrn5cvm" path="res://scence/UI/HP_UI/canvas_layer.tscn" id="9_qjq2c"]
-[ext_resource type="AudioStream" uid="uid://cdkuix04yyitv" path="res://sound/Player/player_get_damage.mp3" id="10_nkq6q"]
 [ext_resource type="PackedScene" uid="uid://dcmm56jrn5cvm" path="res://scence/UI/HP_UI/HP.tscn" id="9_qjq2c"]
+[ext_resource type="AudioStream" uid="uid://cdkuix04yyitv" path="res://sound/Player/player_get_damage.mp3" id="10_nkq6q"]
 [ext_resource type="PackedScene" uid="uid://x4vawkc0ttov" path="res://scence/UI/UI_Button/mouse_1.tscn" id="10_nxy5l"]
 [ext_resource type="AudioStream" uid="uid://cstn1pst7wrvc" path="res://sound/Player/Attack/Damage_on_air.mp3" id="11_7wwi7"]
+[ext_resource type="AudioStream" uid="uid://h0vi5qrxikja" path="res://sound/Player/Minecraft  подбор предмета.mp3" id="11_tiqcl"]
+[ext_resource type="AudioStream" uid="uid://bqm3eupwgkl7b" path="res://sound/Player/bultyh_0.mp3" id="12_yycrh"]
+[ext_resource type="Texture2D" uid="uid://c8w5t8thqlsxf" path="res://aseprite/cd.png" id="13_fev65"]
+[ext_resource type="AudioStream" uid="uid://brhbkcd5036ko" path="res://sound/Player/звук отката.mp3" id="13_q7aa1"]
+[ext_resource type="Texture2D" uid="uid://c365b70ro77fd" path="res://aseprite/cd_dash.png" id="14_q7aa1"]
+[ext_resource type="Texture2D" uid="uid://ch1dlh1e65mld" path="res://aseprite/cd_poof.png" id="15_phwi3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_614ix"]
 atlas = ExtResource("2_wblfa")
@@ -282,6 +287,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sounds/poof:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_wblfa"]
 length = 0.388889
@@ -413,6 +430,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true, false, true, false, true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sounds/poof:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
 
 [sub_resource type="Animation" id="Animation_uapdj"]
 length = 0.8
@@ -509,6 +538,60 @@ _data = {
 &"walk_up": SubResource("Animation_30v4o")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0adg"]
+atlas = ExtResource("13_fev65")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xluh7"]
+atlas = ExtResource("14_q7aa1")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uapdj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0adg")
+}],
+"loop": true,
+"name": &"cd",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xluh7")
+}],
+"loop": true,
+"name": &"cd_1",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3xyb"]
+atlas = ExtResource("13_fev65")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30v4o"]
+atlas = ExtResource("15_phwi3")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_81pwn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3xyb")
+}],
+"loop": true,
+"name": &"cd",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30v4o")
+}],
+"loop": true,
+"name": &"cd_1",
+"speed": 5.0
+}]
+
 [node name="player" type="Node2D"]
 scale = Vector2(4, 4)
 
@@ -534,7 +617,7 @@ script = ExtResource("2_1rhml")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yycrh")
-animation = &"idle"
+animation = &"poof"
 autoplay = "idle"
 
 [node name="Gun" type="Node2D" parent="player"]
@@ -614,6 +697,27 @@ volume_db = -10.0
 
 [node name="get_damage" type="AudioStreamPlayer2D" parent="player/Sounds"]
 stream = ExtResource("10_nkq6q")
+
+[node name="pick_up" type="AudioStreamPlayer2D" parent="player/Sounds"]
+stream = ExtResource("11_tiqcl")
+
+[node name="poof" type="AudioStreamPlayer2D" parent="player/Sounds"]
+stream = ExtResource("12_yycrh")
+volume_db = 8.0
+
+[node name="cd" type="AudioStreamPlayer2D" parent="player/Sounds"]
+stream = ExtResource("13_q7aa1")
+volume_db = -10.0
+
+[node name="cd_dash" type="AnimatedSprite2D" parent="player"]
+position = Vector2(-10, -30)
+sprite_frames = SubResource("SpriteFrames_uapdj")
+animation = &"cd_1"
+
+[node name="cd_poof" type="AnimatedSprite2D" parent="player"]
+position = Vector2(10, -30)
+sprite_frames = SubResource("SpriteFrames_81pwn")
+animation = &"cd_1"
 
 [node name="inventory" parent="." instance=ExtResource("6_5aqop")]
 

@@ -12,15 +12,15 @@ position = Vector2(418, 187)
 script = ExtResource("1_cowph")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(226, 138)
-scale = Vector2(0.970544, 0.834635)
+position = Vector2(222, 137)
+scale = Vector2(0.966767, 0.84375)
 texture = ExtResource("6_ouldm")
 
 [node name="TextureQuit" type="TextureButton" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0.392157)
 anchors_preset = -1
 anchor_left = -3.77551e-05
-anchor_top = 0.0132037
+anchor_top = 0.0119016
 anchor_right = -3.77551e-05
 anchor_bottom = 0.0119016
 offset_left = -138.017

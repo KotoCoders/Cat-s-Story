@@ -6,6 +6,10 @@
 
 [node name="bullet" parent="." instance=ExtResource("1_gymv4")]
 position = Vector2(50, 0)
+speed = null
+direction = null
 
 [node name="bullet2" parent="." instance=ExtResource("1_gymv4")]
 position = Vector2(-50, 0)
+speed = null
+direction = null
